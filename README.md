@@ -4,6 +4,12 @@
 
 My personal assistant 🤖 [still under development]
 
+## Install
+
+```bash
+go get github.com/armour/jarvis
+```
+
 ## Todos
 
 * [x] Webpack project generator
