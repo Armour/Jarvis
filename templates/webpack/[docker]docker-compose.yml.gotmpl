@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  web:
+    image: cguo/{{ .projectName }}
+    build:
+      context: .
+    ports:
+      - "3003:3003"
+    depends_on:
+      {{- if .postgres }}
+      - postgres
+      {{- end }}
+      {{- if .redis }}
+      - redis
+      {{- end }}
+    restart: always
+
+  {{- if .postgres }}
+
+  postgres:
+    image: postgres:10.3-alpine
+    volumes:
+      - ./backend/sql/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./backend/sql/data.sql:/docker-entrypoint-initdb.d/2-data.sql
+    environment:
+      - POSTGRES_DB=docker
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+    ports:
+      - "5432:5432"
+    restart: always
+  {{- end }}
+
+  {{- if .redis }}
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    restart: always
+  {{- end }}
