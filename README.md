@@ -4,6 +4,10 @@
 
 My personal assistant 🤖 [still under development]
 
+## Usage
+
+![jarvis-1](images/jarvis-1.gif)
+
 ## Install
 
 ```bash
