@@ -2,7 +2,7 @@
 
 > "Perhaps, if you intend to visit other planets, we should improve the exosystems."
 
-My personal assistant 🤖
+My personal assistant 🤖 [still under development]
 
 ## Todos
 
