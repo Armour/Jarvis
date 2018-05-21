@@ -7,6 +7,7 @@
 	editor = vim
 [push]
 	default = simple
+{{- if .mac }}
 [diff]
 	tool = p4mergetool
 [difftool]
@@ -21,3 +22,4 @@
 [mergetool "p4mergetool"]
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \"$PWD\"/\"$BASE\" \"$PWD\"/\"$REMOTE\" \"$PWD\"/\"$LOCAL\" \"$PWD\"/\"$MERGED\"
 	trustexitcode = false
+{{- end }}

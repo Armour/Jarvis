@@ -1,15 +1,6 @@
 package cmd
 
 import (
-	"bytes"
-	"fmt"
-	"html/template"
-	"io/ioutil"
-	"os"
-	"regexp"
-	"strings"
-
-	"github.com/gobuffalo/packr"
 	"github.com/spf13/cobra"
 )
 
@@ -29,19 +20,12 @@ var (
 	typescript         bool
 )
 
-const (
-	requirePattern = `\[(.*)\]`
-)
-
-var (
-	requireRE = regexp.MustCompile(requirePattern)
-)
-
 var webpackCmd = &cobra.Command{
 	Use:   "webpack",
 	Short: "Start new project using webpack template.",
 	Long:  `Start new project using webpack template provided in 'templates/webpack' folder.`,
 	Run: func(cmd *cobra.Command, args []string) {
+		templatePath := "../templates/webpack"
 		requireMap := map[string]interface{}{
 			"ci":          ci,
 			"coverage":    coverallToken,
@@ -52,67 +36,25 @@ var webpackCmd = &cobra.Command{
 			"redis":       redis,
 			"typescript":  typescript,
 		}
+		replaceMap := map[string]interface{}{
+			"ci":                 ci,
+			"coverallToken":      coverallToken,
+			"docker":             docker,
+			"materialize":        materialize,
+			"postgres":           postgres,
+			"projectName":        projectName,
+			"projectShortname":   projectShortname,
+			"projectDescription": projectDescription,
+			"projectBgColor":     projectBgColor,
+			"projectThemeColor":  projectThemeColor,
+			"react":              react,
+			"redis":              redis,
+			"typescript":         typescript,
+		}
 		if projectShortname == "" {
 			projectShortname = projectName
 		}
-		fmt.Println("Generated file:")
-		templatesBox := packr.NewBox("../templates/webpack")
-		for _, f := range templatesBox.List() {
-			var missRequired bool
-			outputFile := f
-			requireMatches := requireRE.FindAllStringSubmatch(f, -1)
-			for _, m := range requireMatches {
-				if len(m) > 1 {
-					for _, word := range m {
-						if r, ok := requireMap[word]; ok {
-							if r == false || r == "" {
-								missRequired = true
-								break
-							}
-						}
-					}
-					outputFile = strings.Replace(outputFile, m[0], "", -1)
-				}
-				if missRequired {
-					break
-				}
-			}
-			if missRequired {
-				continue
-			}
-			content := templatesBox.String(f)
-			t := template.Must(template.New("template").Parse(content))
-			var tpl bytes.Buffer
-			err := t.Execute(&tpl, map[string]interface{}{
-				"ci":                 ci,
-				"coverallToken":      coverallToken,
-				"docker":             docker,
-				"materialize":        materialize,
-				"postgres":           postgres,
-				"projectName":        projectName,
-				"projectShortname":   projectShortname,
-				"projectDescription": projectDescription,
-				"projectBgColor":     projectBgColor,
-				"projectThemeColor":  projectThemeColor,
-				"react":              react,
-				"redis":              redis,
-				"typescript":         typescript,
-			})
-			if err != nil {
-				exitOnError(err)
-			}
-			outputFile = strings.TrimSuffix(outputFile, ".gotmpl")
-			folderIndex := strings.LastIndex(outputFile, "/")
-			if folderIndex != -1 {
-				folderPath := outputFile[:folderIndex]
-				if err := os.MkdirAll(folderPath, os.ModePerm); err != nil {
-					exitOnError(err)
-				}
-			}
-			err = ioutil.WriteFile(outputFile, tpl.Bytes(), 0644)
-			exitOnError(err)
-			fmt.Println(outputFile)
-		}
+		generateFile(templatePath, "", requireMap, replaceMap)
 	},
 }
 
