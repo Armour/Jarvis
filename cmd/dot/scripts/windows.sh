@@ -1,5 +1,5 @@
 # Install scoop
-set-executionpolicy unrestricted -s cu
+set-executionpolicy unrestricted -s cu -Force
 iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 
 # Install basic tools
