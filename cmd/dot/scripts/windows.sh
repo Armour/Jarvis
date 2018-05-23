@@ -8,8 +8,6 @@ scoop install sudo 7zip coreutils curl git grep openssh sed wget vim grep concfg
 # Use material theme
 concfg import material
 
-# Install extra tools
-scoop bucket add extras 
-scoop bucket add nerd-fonts
-scoop install vscode anaconda3 hyper kitematic now-cli p4merge postman shadowsocks slack telegram gcloud
-sudo scoop install FiraCode-NF SourceCodePro-NF
+# Install extra apps
+scoop bucket add extras
+scoop install vscode anaconda3 hyper kitematic now-cli p4merge shadowsocks slack telegram gcloud postman
