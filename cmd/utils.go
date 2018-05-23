@@ -22,14 +22,16 @@ var (
 	requireRE = regexp.MustCompile(requirePattern)
 )
 
-func exitOnError(err error) {
+// ExitOnError prints the error message and exit with code 1
+func ExitOnError(err error) {
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 }
 
-func runCommand(name string, arg ...string) {
+// RunCommand executes the input command
+func RunCommand(name string, arg ...string) {
 	cmd := exec.Command(name, arg...)
 	var outBuf bytes.Buffer
 	var errBuf bytes.Buffer
@@ -39,19 +41,21 @@ func runCommand(name string, arg ...string) {
 		if errBuf.String() != "" {
 			fmt.Printf("%q", errBuf.String())
 		}
-		exitOnError(err)
+		ExitOnError(err)
 	}
 	if outBuf.String() != "" {
 		fmt.Printf("%q", outBuf.String())
 	}
 }
 
-func generateFile(templatePath string, outputPath string, requireMap map[string]interface{}, replaceMap map[string]interface{}) {
+// GenerateFile generates files from template folder
+func GenerateFile(templatePath string, outputPath string, requireMap map[string]interface{}, replaceMap map[string]interface{}) {
 	fmt.Println("Generated file:")
 	templatesBox := packr.NewBox(templatePath)
 	for _, f := range templatesBox.List() {
 		var missRequired bool
 		outputFile := f
+
 		// Check requirement
 		requireMatches := requireRE.FindAllStringSubmatch(f, -1)
 		for _, m := range requireMatches {
@@ -73,24 +77,26 @@ func generateFile(templatePath string, outputPath string, requireMap map[string]
 		if missRequired {
 			continue
 		}
+
 		// Get file content
 		var content []byte
 		if strings.HasSuffix(outputFile, ".gotmpl") {
 			t := template.Must(template.New("template").Parse(templatesBox.String(f)))
 			var tpl bytes.Buffer
 			if err := t.Execute(&tpl, replaceMap); err != nil {
-				exitOnError(err)
+				ExitOnError(err)
 			}
 			content = tpl.Bytes()
 		} else {
 			content = templatesBox.Bytes(f)
 		}
+
 		// Create and write to new file
 		outputFile = strings.TrimSuffix(outputFile, ".gotmpl")
 		if outputPath != "" {
 			path, err := filepath.Abs(outputPath + "/" + outputFile)
 			if err != nil {
-				exitOnError(err)
+				ExitOnError(err)
 			}
 			outputFile = path
 		}
@@ -98,10 +104,10 @@ func generateFile(templatePath string, outputPath string, requireMap map[string]
 		if folderIndex != -1 {
 			folderPath := outputFile[:folderIndex]
 			if err := os.MkdirAll(folderPath, os.ModePerm); err != nil {
-				exitOnError(err)
+				ExitOnError(err)
 			}
 		}
-		exitOnError(ioutil.WriteFile(outputFile, content, 0644))
+		ExitOnError(ioutil.WriteFile(outputFile, content, 0644))
 		fmt.Println(outputFile)
 	}
 }

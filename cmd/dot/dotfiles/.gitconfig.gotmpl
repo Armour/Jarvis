@@ -23,3 +23,19 @@
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \"$PWD\"/\"$BASE\" \"$PWD\"/\"$REMOTE\" \"$PWD\"/\"$LOCAL\" \"$PWD\"/\"$MERGED\"
 	trustexitcode = false
 {{- end }}
+{{- if .windows }}
+[diff]
+	tool = p4merge
+[difftool]
+	prompt = false
+[difftool "p4merge"]
+	path = C:\\Program Files\\Perforce\\p4merge.exe
+[merge]
+	tool = p4merge
+	keepBackup = false
+[mergetool]
+	prompt = false
+[mergetool "p4merge"]
+	path = C:\\Program Files\\Perforce\\p4merge.exe
+	trustexitcode = false
+{{- end }}

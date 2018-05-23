@@ -112,11 +112,21 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
+    {{- if .mac }}
     shell: '/bin/zsh',
+    {{- end }}
+    {{- if .windows }}
+    shell: 'C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe',
+    {{- end }}
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
+    {{- if .mac }}
     shellArgs: ['--login'],
+    {{- end }}
+    {{- if .windows }}
+    shellArgs: [],
+    {{- end }}
 
     // for environment variables
     env: {},
@@ -150,7 +160,8 @@ module.exports = {
     'hyper-dark-scrollbar',
     'hyper-material-theme',
     'hyper-search',
-    'hyper-statusline'
+    'hyper-statusline',
+    'hyperfull'
   ],
 
   // in development, you can create a directory under
