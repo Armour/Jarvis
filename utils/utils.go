@@ -94,15 +94,13 @@ func GenerateFile(templatePath string, outputPath string, requireMap map[string]
 		// Create and write to new file
 		outputFile = strings.TrimSuffix(outputFile, ".gotmpl")
 		if outputPath != "" {
-			path, err := filepath.Abs(outputPath + "/" + outputFile)
+			path, err := filepath.Abs(filepath.Join(outputPath, outputFile))
 			if err != nil {
 				ExitOnError(err)
 			}
 			outputFile = path
 		}
-		folderIndex := strings.LastIndex(outputFile, "/")
-		if folderIndex != -1 {
-			folderPath := outputFile[:folderIndex]
+		if folderPath := filepath.Dir(outputFile); folderPath != "." {
 			if err := os.MkdirAll(folderPath, os.ModePerm); err != nil {
 				ExitOnError(err)
 			}
