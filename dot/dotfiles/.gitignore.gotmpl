@@ -1,4 +1,4 @@
-{{- if .linux }}
+{{- if .linux -}}
 *~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
@@ -13,7 +13,7 @@
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 {{- end }}
-{{- if .mac }}
+{{- if .mac -}}
 # General
 .DS_Store
 
@@ -23,7 +23,7 @@
 # Files that might appear in the root of a volume
 .Trashes
 {{- end }}
-{{- if .windows }}
+{{- if .windows -}}
 # Windows thumbnail cache files
 Thumbs.db
 

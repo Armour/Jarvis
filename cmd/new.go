@@ -1,16 +1,15 @@
-package new
+package cmd
 
 import (
-	c "github.com/armour/jarvis/cmd"
 	"github.com/spf13/cobra"
 )
 
 var newCmd = &cobra.Command{
-	Use:   "template",
+	Use:   "new",
 	Short: "Start new project using templates.",
 	Long:  "Start new project using templates.",
 }
 
 func init() {
-	c.RootCmd.AddCommand(newCmd)
+	rootCmd.AddCommand(newCmd)
 }

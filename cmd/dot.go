@@ -1,9 +1,9 @@
-package dot
+package cmd
 
 import (
 	"os/user"
 
-	c "github.com/armour/jarvis/cmd"
+	"github.com/armour/jarvis/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -19,7 +19,7 @@ var dotCmd = &cobra.Command{
 	Short: "Manage global dot files.",
 	Long:  "Manage global dot files.",
 	Run: func(cmd *cobra.Command, args []string) {
-		templatePath := "dotfiles"
+		templatePath := "../dot/dotfiles"
 		requireMap := map[string]interface{}{
 			"mac":     mac,
 			"linux":   linux,
@@ -33,9 +33,9 @@ var dotCmd = &cobra.Command{
 		}
 		usr, err := user.Current()
 		if err != nil {
-			c.ExitOnError(err)
+			utils.ExitOnError(err)
 		}
-		c.GenerateFile(templatePath, usr.HomeDir, requireMap, replaceMap)
+		utils.GenerateFile(templatePath, usr.HomeDir, requireMap, replaceMap)
 		if mac {
 			// runCommand("bash", "mac.sh")
 		}
@@ -49,7 +49,7 @@ var dotCmd = &cobra.Command{
 }
 
 func init() {
-	c.RootCmd.AddCommand(dotCmd)
+	rootCmd.AddCommand(dotCmd)
 
 	dotCmd.Flags().StringVarP(&username, "username", "u", "armour", "The name for current user.")
 	dotCmd.Flags().BoolVar(&mac, "mac", false, "The flag to enable mac environment.")

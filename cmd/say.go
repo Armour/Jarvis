@@ -1,4 +1,4 @@
-package say
+package cmd
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	c "github.com/armour/jarvis/cmd"
+	"github.com/armour/jarvis/utils"
 	"github.com/briandowns/spinner"
 	"github.com/spf13/cobra"
 )
@@ -20,14 +20,14 @@ var sayCmd = &cobra.Command{
 		s.Start()                                                   // Start the spinner
 		res, err := http.Get("https://v1.hitokoto.cn/?encode=text") // Request hitokoto api
 		s.Stop()                                                    // Stop the spinner
-		c.ExitOnError(err)
+		utils.ExitOnError(err)
 		defer res.Body.Close()
 		contents, err := ioutil.ReadAll(res.Body)
-		c.ExitOnError(err)
+		utils.ExitOnError(err)
 		fmt.Printf("%s\n", string(contents))
 	},
 }
 
 func init() {
-	c.RootCmd.AddCommand(sayCmd)
+	rootCmd.AddCommand(sayCmd)
 }

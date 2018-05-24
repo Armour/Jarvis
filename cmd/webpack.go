@@ -1,7 +1,7 @@
-package new
+package cmd
 
 import (
-	c "github.com/armour/jarvis/cmd"
+	"github.com/armour/jarvis/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -26,7 +26,7 @@ var webpackCmd = &cobra.Command{
 	Short: "Start new project using webpack template.",
 	Long:  "Start new project using webpack template.",
 	Run: func(cmd *cobra.Command, args []string) {
-		templatePath := "webpack"
+		templatePath := "../new/webpack"
 		requireMap := map[string]interface{}{
 			"ci":          ci,
 			"coverage":    coverallToken,
@@ -55,7 +55,7 @@ var webpackCmd = &cobra.Command{
 		if projectShortname == "" {
 			projectShortname = projectName
 		}
-		c.GenerateFile(templatePath, "", requireMap, replaceMap)
+		utils.GenerateFile(templatePath, "", requireMap, replaceMap)
 	},
 }
 
