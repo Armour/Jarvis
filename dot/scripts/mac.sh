@@ -1,16 +1,101 @@
 # Init brew repo
-brew tap buo/cask-upgrade caskroom/cask caskroom/fonts heroku/brew homebrew/core homebrew/python homebrew/science homebrew/services homebrew/versions
+brew tap buo/cask-upgrade \
+         caskroom/cask \
+         caskroom/fonts \
+         heroku/brew \
+         homebrew/core \
+         homebrew/python \
+         homebrew/science \
+         homebrew/services \
+         homebrew/versions
 brew update
 brew upgrade -y
 
 # Install brew stuff
-brew reinstall git autojump docker-clean heroku libpng mono nginx node postgresql redis yarn wget python python3 sqlmap taglib tree ccat archey colordiff stormssh htop ffmpeg
+brew install git \
+             autojump \
+             docker-clean\
+             heroku \
+             libpng \
+             mono \
+             nginx \
+             node \
+             postgresql \
+             redis \
+             yarn \
+             get \
+             sqlmap \
+             taglib \
+             tree \
+             ccat \
+             archey \
+             colordiff \
+             stormssh \
+             htop \
+             ffmpeg
 
 # Install brew cask stuff
-brew cask reinstall qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize qlvideo quicklookapk qladdict betterzip neteasemusic teamviewer google-chrome slack lingon-x shadowsocksx-ng appzapper iterm2 scroll-reverser dash unity postico rowanj-gitx alfred docker visual-studio-code alarm-clock lyricsx qq nylas-mail kitematic db-browser-for-sqlite jupyter-notebook-ql oversight vlc vox font-source-code-pro-for-powerline font-fira-code google-cloud-sdk usage p4merge sketch now
+brew cask install qlcolorcode \
+                  qlstephen \
+                  qlmarkdown \
+                  quicklook-json \
+                  qlimagesize \
+                  qlvideo \
+                  quicklookapk \
+                  qladdict \
+                  betterzip \
+                  neteasemusic \
+                  teamviewer \
+                  google-chrome \
+                  slack \
+                  lingon-x \
+                  shadowsocksx-ng \
+                  appzapper \
+                  iterm2 \
+                  scroll-reverser \
+                  dash \
+                  unity \
+                  postico \
+                  rowanj-gitx \
+                  alfred \
+                  docker \
+                  visual-studio-code \
+                  alarm-clock \
+                  lyricsx \
+                  qq \
+                  nylas-mail \
+                  kitematic \
+                  db-browser-for-sqlite \
+                  jupyter-notebook-ql \
+                  oversight \
+                  vlc \
+                  vox \
+                  font-source-code-pro-for-powerline \
+                  font-fira-code \
+                  google-cloud-sdk \
+                  usage \
+                  p4merge \
+                  sketch \
+                  now \
+                  kap \
+                  postman \
+                  anaconda
 
 # Install brew cask stuff (optional)
-# brew cask reinstall wireshark texmaker mactex skype spotify appcode clion pycharm webstorm clip-studio-paint telegram insomnia kaleidoscope burp-suite
+# brew cask install wireshark \
+#                   texmaker \
+#                   mactex \
+#                   skype \
+#                   spotify \
+#                   appcode \
+#                   clion \
+#                   pycharm \
+#                   webstorm \
+#                   clip-studio-paint \
+#                   telegram \
+#                   insomnia \
+#                   kaleidoscope \
+#                   burp-suite
 
 # Cleanup
 brew cleanup
