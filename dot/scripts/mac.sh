@@ -23,7 +23,7 @@ brew install git \
              postgresql \
              redis \
              yarn \
-             get \
+             wget \
              sqlmap \
              taglib \
              tree \
@@ -43,6 +43,7 @@ brew cask install qlcolorcode \
                   qlvideo \
                   quicklookapk \
                   qladdict \
+                  jupyter-notebook-ql \
                   betterzip \
                   neteasemusic \
                   teamviewer \
@@ -66,20 +67,19 @@ brew cask install qlcolorcode \
                   nylas-mail \
                   kitematic \
                   db-browser-for-sqlite \
-                  jupyter-notebook-ql \
                   oversight \
                   vlc \
                   vox \
                   font-source-code-pro-for-powerline \
                   font-fira-code \
                   google-cloud-sdk \
-                  usage \
                   p4merge \
                   sketch \
                   now \
                   kap \
                   postman \
-                  anaconda
+                  anaconda \
+                  telegram
 
 # Install brew cask stuff (optional)
 # brew cask install wireshark \
@@ -92,8 +92,6 @@ brew cask install qlcolorcode \
 #                   pycharm \
 #                   webstorm \
 #                   clip-studio-paint \
-#                   telegram \
-#                   insomnia \
 #                   kaleidoscope \
 #                   burp-suite
 

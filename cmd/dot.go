@@ -18,6 +18,12 @@ var dotCmd = &cobra.Command{
 	Use:   "dot",
 	Short: "Manage global dot files.",
 	Long:  "Manage global dot files.",
+}
+
+var syncCmd = &cobra.Command{
+	Use:   "sync",
+	Short: "Download all global dot files to local.",
+	Long:  "Download all global dot files to local.",
 	Run: func(cmd *cobra.Command, args []string) {
 		templatePath := "../dot/dotfiles"
 		requireMap := map[string]interface{}{
@@ -50,6 +56,7 @@ var dotCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(dotCmd)
+	dotCmd.AddCommand(syncCmd)
 
 	dotCmd.Flags().StringVarP(&username, "username", "u", "armour", "The name for current user.")
 	dotCmd.Flags().BoolVar(&mac, "mac", false, "The flag to enable mac environment.")
