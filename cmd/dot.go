@@ -58,8 +58,8 @@ func init() {
 	rootCmd.AddCommand(dotCmd)
 	dotCmd.AddCommand(syncCmd)
 
-	dotCmd.Flags().StringVarP(&username, "username", "u", "armour", "The name for current user.")
-	dotCmd.Flags().BoolVar(&mac, "mac", false, "The flag to enable mac environment.")
-	dotCmd.Flags().BoolVar(&linux, "linux", false, "The flag to enable linux environment.")
-	dotCmd.Flags().BoolVar(&windows, "windows", false, "The flag to enable windows environment.")
+	syncCmd.Flags().StringVarP(&username, "username", "u", "armour", "The name for current user.")
+	syncCmd.Flags().BoolVar(&mac, "mac", false, "The flag to enable mac environment.")
+	syncCmd.Flags().BoolVar(&linux, "linux", false, "The flag to enable linux environment.")
+	syncCmd.Flags().BoolVar(&windows, "windows", false, "The flag to enable windows environment.")
 }
