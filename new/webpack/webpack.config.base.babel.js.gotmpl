@@ -9,15 +9,14 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
-{{- if .react }}
 
+{{if .react -}}
 const ReactManifest = './frontend/dist/dll/react_manifest.json';
 const ImmutableManifest = './frontend/dist/dll/immutable_manifest.json';
 {{- end }}
 {{- if .materialize }}
 const MaterializeManifest = './frontend/dist/dll/materialize_manifest.json';
 {{- end }}
-const MiscManifest = './frontend/dist/dll/misc_manifest.json';
 const devMode = process.env.NODE_ENV !== 'production';
 
 export default {
@@ -130,16 +129,13 @@ export default {
     {{- if .materialize }}
     new webpack.DllReferencePlugin({ manifest: MaterializeManifest }),
     {{- end }}
-    new webpack.DllReferencePlugin({ manifest: MiscManifest }),
     // Extract css part from javascript bundle into separated file
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[contenthash:10].css',
       chunkFilename: devMode ? '[id].css' : '[id].[contenthash:10].css',
     }),
     // Better building progress display
-    new ProgressBarWebpackPlugin({
-      clear: false,
-    }),
+    new ProgressBarWebpackPlugin(),
     // Add Progressive Web Application manifest
     new WebpackPwaManifest({
       name: '{{ .projectName }}',
@@ -175,7 +171,8 @@ export default {
     }),
     // Add dll reference files to html
     new AddAssetHtmlPlugin({
-      filepath: path.resolve(__dirname, 'frontend/dist/dll/*_dll.js'), includeSourcemap: false,
+      filepath: path.resolve(__dirname, 'frontend/dist/dll/*_dll.js'),
+      includeSourcemap: false,
     }),
   ],
 
@@ -197,10 +194,6 @@ export default {
       '.json',
       '.scss',
     ],
-    // Solve duplicated package issue
-    alias: {
-      'hash-base': path.resolve(__dirname, 'node_modules/hash-base'),
-    },
   },
 
   // Turn off performance hints (assets size limit)

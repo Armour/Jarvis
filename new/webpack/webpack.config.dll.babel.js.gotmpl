@@ -2,8 +2,8 @@ import path from 'path';
 import webpack from 'webpack';
 
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
-
 {{- if .react }}
+
 const reactVendors = [
   'react',
   'react-dom',
@@ -23,17 +23,12 @@ const immutableVendors = [
   'immutable',
 ];
 {{- end }}
-
 {{- if .materialize }}
+
 const materializeVendors = [
   'materialize-css',
 ];
 {{- end }}
-
-const miscVendors = [
-  'lodash',
-  'prismjs',
-];
 
 // Base config
 const config = {
@@ -52,7 +47,6 @@ const config = {
     {{- if .materialize }}
     materialize: materializeVendors,
     {{- end }}
-    misc: miscVendors,
   },
 
   // Affecting the output of the compilation
@@ -68,9 +62,7 @@ const config = {
   // A list of used webpack plugins
   plugins: [
     // Better building progress display
-    new ProgressBarWebpackPlugin({
-      clear: false,
-    }),
+    new ProgressBarWebpackPlugin(),
     // Output manifest json file for each generated dll reference file
     new webpack.DllPlugin({
       path: path.resolve(__dirname, 'frontend/dist/dll/[name]_manifest.json'),

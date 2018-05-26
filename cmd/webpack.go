@@ -12,6 +12,7 @@ var (
 	projectDescription string
 	projectBgColor     string
 	projectThemeColor  string
+	license            string
 	ci                 bool
 	docker             bool
 	materialize        bool
@@ -51,6 +52,7 @@ var webpackCmd = &cobra.Command{
 			"react":              react,
 			"redis":              redis,
 			"typescript":         typescript,
+			"license":            license,
 		}
 		if projectShortname == "" {
 			projectShortname = projectName
@@ -63,11 +65,12 @@ func init() {
 	newCmd.AddCommand(webpackCmd)
 
 	webpackCmd.Flags().StringVarP(&coverallToken, "coverallToken", "c", "", "The token for coverall code coverage. (optional)")
-	webpackCmd.Flags().StringVarP(&projectName, "projectName", "n", "", "The name for this new project. (required)")
-	webpackCmd.Flags().StringVarP(&projectShortname, "projectShortname", "s", "", "The short name for this new project. (optional)")
-	webpackCmd.Flags().StringVarP(&projectDescription, "projectDescription", "d", "project description here", "The description for this new project. (optional)")
-	webpackCmd.Flags().StringVarP(&projectBgColor, "projectBgColor", "b", "#2196f3", "The background color for this new project. (optional)")
-	webpackCmd.Flags().StringVarP(&projectThemeColor, "projectThemeColor", "t", "#2196f3", "The theme color for this new project. (optional)")
+	webpackCmd.Flags().StringVarP(&projectName, "projectName", "n", "", "The name for this project. (required)")
+	webpackCmd.Flags().StringVarP(&projectShortname, "projectShortname", "s", "", "The short name for this project. (optional)")
+	webpackCmd.Flags().StringVarP(&projectDescription, "projectDescription", "d", "project description here", "The description for this project. (optional)")
+	webpackCmd.Flags().StringVarP(&projectBgColor, "projectBgColor", "b", "#2196f3", "The background color for this project. (optional)")
+	webpackCmd.Flags().StringVarP(&projectThemeColor, "projectThemeColor", "t", "#2196f3", "The theme color for this project. (optional)")
+	webpackCmd.Flags().StringVarP(&license, "license", "l", "MIT", "The license for this project, default is \"MIT\". (\"MIT\", \"GPL\", \"Apache\"")
 	webpackCmd.Flags().BoolVar(&ci, "ci", true, "The flag to enable continuous integration support.")
 	webpackCmd.Flags().BoolVar(&docker, "docker", true, "The flag to enable docker support.")
 	webpackCmd.Flags().BoolVar(&materialize, "materialize", true, "The flag to enable materialize support.")
