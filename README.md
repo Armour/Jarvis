@@ -17,8 +17,10 @@ go get github.com/armour/jarvis
 ## Todos
 
 * [x] Webpack project generator
-* [ ] More project generators
-* [ ] Dot file backup/sync
+* [ ] Parcel project generator
+* [ ] Go project generator
+* [ ] Misc project generator
+* [x] Dot file backup/sync
 * [x] Play around with [Hitokoto](https://hitokoto.cn/) api
 * [ ] Google Home integration
 * [ ] Music management

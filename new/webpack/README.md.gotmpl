@@ -9,7 +9,14 @@
 {{- if .coverallToken }}
 [![Coverage Status](https://coveralls.io/repos/github/Armour/{{ .projectName }}/badge.svg?branch=master)](https://coveralls.io/github/Armour/{{ .projectName }}?branch=master)
 {{- end }}
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+{{- if eq license "MIT" }}
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+{{- else if eq license "GPL" }}
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+{{- else if eq license "Apache" }}
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+{{- end }}
 
 ## Contributing
 
@@ -21,4 +28,10 @@
 
 ## License
 
-MIT License
+{{- if eq license "MIT" }}
+[MIT License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
+{{- else if eq license "GPL" }}
+[GPL License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
+{{- else if eq license "Apache" }}
+[Apache License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
+}}
