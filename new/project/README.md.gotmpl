@@ -1,16 +1,6 @@
 # {{ .projectName }}
 
-[![Dependency Status](https://david-dm.org/Armour/{{ .projectName }}/status.svg)](https://david-dm.org/Armour/{{ .projectName }})
-[![DevDependency Status](https://david-dm.org/Armour/{{ .projectName }}/dev-status.svg)](https://david-dm.org/Armour/{{ .projectName }}?type=dev)
-{{- if .ci }}
-[![CircleCI](https://circleci.com/gh/Armour/{{ .projectName }}/tree/master.svg?style=shield)](https://circleci.com/gh/Armour/{{ .projectName }}/tree/master)
-[![Appveyor](https://ci.appveyor.com/api/projects/status/github/Armour/{{ .projectName }}?svg=true&branch=master)](https://ci.appveyor.com/api/projects/status/github/Armour/{{ .projectName }}?svg=true&branch=master)
-{{- end }}
-{{- if .coverallToken }}
-[![Coverage Status](https://coveralls.io/repos/github/Armour/{{ .projectName }}/badge.svg?branch=master)](https://coveralls.io/github/Armour/{{ .projectName }}?branch=master)
-{{- end }}
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-[![Tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 {{- if eq license "MIT" }}
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 {{- else if eq license "GPL" }}
