@@ -20,11 +20,14 @@ const MaterializeManifest = './frontend/dist/dll/materialize_manifest.json';
 const devMode = process.env.NODE_ENV !== 'production';
 
 export default {
-  // The base directory, an absolute path, for resolving entry points and loaders from configuration
+  // The base directory, an absolute path, for resolving entry points and loaders from configuration.
   context: path.resolve(__dirname),
 
   // Minimal log level
   stats: 'minimal',
+
+  // Get mode from NODE_ENV
+  mode: process.env.NODE_ENV,
 
   // Determine how the different types of modules within a project will be treated
   module: {
@@ -78,8 +81,8 @@ export default {
         test: /\.css$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { importLoaders: 1 } }, // https://github.com/webpack-contrib/css-loader#importloaders
-          { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
+          { loader: 'css-loader', options: { sourceMap: false, importLoaders: 1 } }, // TODO: enable sourceMap without FOUC
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssCssnext] } },
         ],
       },
       // Use a list of loaders to load scss files
@@ -87,14 +90,14 @@ export default {
         test: /\.scss$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { importLoaders: 2 } },
-          { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
-          { loader: 'sass-loader' },
+          { loader: 'css-loader', options: { sourceMap: false, importLoaders: 2 } }, // TODO: enable sourceMap without FOUC
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssCssnext] } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
       // Use image-webpack-loader and url-loader to load images
       {
-        test: /\.(png|jpe?g|gif|svg|webp)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|webp|tiff)(\?.*)?$/,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
           { loader: 'image-webpack-loader', options: { bypassOnDebug: true } },
@@ -194,10 +197,5 @@ export default {
       '.json',
       '.scss',
     ],
-  },
-
-  // Turn off performance hints (assets size limit)
-  performance: {
-    hints: false,
   },
 };
