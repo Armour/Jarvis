@@ -9,11 +9,11 @@ import { DevTools } from 'containers/DevTools';
 import { reducers } from 'reducers';
 import { isProduction } from 'utils';
 
-{{- if .typescript }}
+{{if .typescript -}}
 export const configureStore = (initialState: {}, history: History): Store<any> => {
-{{- else }}
+{{- else -}}
 export const configureStore = (initialState, history) => {
-{{ end }}
+{{- end }}
   // Enhancer
   let enhancer: any;
   if (isProduction) {

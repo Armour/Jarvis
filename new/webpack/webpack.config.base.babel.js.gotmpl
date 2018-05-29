@@ -151,24 +151,24 @@ export default {
       icons: [
         {
           src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
-          sizes: [192, 512],  // Generate general icons
+          sizes: [192, 512], // Generate general icons
         },
         {
           src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
           sizes: [120, 152, 167, 180],
           destination: path.join('icons', 'ios'),
-          ios: true,  // Generate apple touch icons
+          ios: true, // Generate apple touch icons
         },
         {
           src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
           sizes: 1024,
           destination: path.join('icons', 'ios'),
-          ios: 'startup',  // Generate apple touch startup image
+          ios: 'startup', // Generate apple touch startup image
         },
         {
           src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
           sizes: [144, 192, 512],
-          destination: path.join('icons', 'android'),  // Generate android icons
+          destination: path.join('icons', 'android'), // Generate android icons
         },
       ],
     }),
