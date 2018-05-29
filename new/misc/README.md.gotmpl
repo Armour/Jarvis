@@ -20,11 +20,11 @@
 
 ## License
 
-{{- if eq .license "MIT" }}
+{{ if eq .license "MIT" -}}
 [MIT License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
-{{- else if eq .license "GPL" }}
+{{- else if eq .license "GPL" -}}
 [GPL License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
-{{- else if eq .license "Apache" }}
+{{- else if eq .license "Apache" -}}
 [Apache License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
 }}
 {{- end }}
