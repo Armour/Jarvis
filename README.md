@@ -30,15 +30,15 @@ go get github.com/armour/jarvis
 
 * Say something using [Hitokoto](https://hitokoto.cn/) api
 
-<script src="https://asciinema.org/a/184121.js" id="asciicast-184121" async></script>
+[![asciicast](https://asciinema.org/a/184121.png)](https://asciinema.org/a/184121)
 
 * Webpack project generator
 
-<script src="https://asciinema.org/a/184124.js" id="asciicast-184124" async></script>
+[![asciicast](https://asciinema.org/a/184124.png)](https://asciinema.org/a/184124)
 
 * Dot file backup/sync
 
-<script src="https://asciinema.org/a/184122.js" id="asciicast-184122" async></script>
+[![asciicast](https://asciinema.org/a/184122.png)](https://asciinema.org/a/184122)
 
 ## Projects used Jarvis
 
