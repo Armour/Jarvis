@@ -16,8 +16,8 @@ var (
 
 var dotCmd = &cobra.Command{
 	Use:   "dot",
-	Short: "Manage global dot files.",
-	Long:  "Manage global dot files.",
+	Short: "Manage global dot files",
+	Long:  "Manage global dot files",
 }
 
 var syncCmd = &cobra.Command{

@@ -8,10 +8,6 @@
 
 My personal assistant 🤖 [still under development]
 
-## Usage
-
-![jarvis-1](images/jarvis-1.gif)
-
 ## Install
 
 ```bash
@@ -29,6 +25,20 @@ go get github.com/armour/jarvis
 * [ ] Music management
 * [ ] Wallpaper management
 * [ ] And more...
+
+## Usage
+
+* Say something using [Hitokoto](https://hitokoto.cn/) api
+
+<script src="https://asciinema.org/a/184121.js" id="asciicast-184121" async></script>
+
+* Webpack project generator
+
+<script src="https://asciinema.org/a/184124.js" id="asciicast-184124" async></script>
+
+* Dot file backup/sync
+
+<script src="https://asciinema.org/a/184122.js" id="asciicast-184122" async></script>
 
 ## Projects used Jarvis
 

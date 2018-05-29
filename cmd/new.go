@@ -6,8 +6,8 @@ import (
 
 var newCmd = &cobra.Command{
 	Use:   "new",
-	Short: "Start new project using templates.",
-	Long:  "Start new project using templates.",
+	Short: "Start new project using templates",
+	Long:  "Start new project using templates",
 }
 
 func init() {

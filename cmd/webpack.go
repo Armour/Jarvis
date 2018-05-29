@@ -24,8 +24,8 @@ var (
 
 var webpackCmd = &cobra.Command{
 	Use:   "webpack",
-	Short: "Start new project using webpack template.",
-	Long:  "Start new project using webpack template.",
+	Short: "Start new project using webpack template",
+	Long:  "Start new project using webpack template",
 	Run: func(cmd *cobra.Command, args []string) {
 		templatePath := "../new/webpack"
 		requireMap := map[string]interface{}{

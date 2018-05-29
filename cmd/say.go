@@ -13,8 +13,8 @@ import (
 
 var sayCmd = &cobra.Command{
 	Use:   "say",
-	Short: "Say something.（#￣▽￣#）",
-	Long:  "Hi Jarvis, say something please.（#￣▽￣#）",
+	Short: "Say something（#￣▽￣#）",
+	Long:  "Hi Jarvis, say something please（#￣▽￣#）",
 	Run: func(cmd *cobra.Command, args []string) {
 		s := spinner.New(spinner.CharSets[9], 100*time.Millisecond) // Build spinner
 		s.Start()                                                   // Start the spinner
