@@ -28,17 +28,11 @@ go get github.com/armour/jarvis
 
 ## Usage
 
-* Say something using [Hitokoto](https://hitokoto.cn/) api
+* [Say something（#￣▽￣#）](https://asciinema.org/a/184121)
 
-  [![asciicast](https://asciinema.org/a/184121.png)](https://asciinema.org/a/184121)
+* [Start new project using webpack templates](https://asciinema.org/a/184124)
 
-* Webpack project generator
-
-  [![asciicast](https://asciinema.org/a/184124.png)](https://asciinema.org/a/184124)
-
-* Dot file backup/sync
-
-  [![asciicast](https://asciinema.org/a/184122.png)](https://asciinema.org/a/184122)
+* [Sync global dot files](https://asciinema.org/a/184122)
 
 ## Projects used Jarvis
 
