@@ -1,0 +1,38 @@
+import * as React from 'react';
+import { Provider } from 'react-redux';
+import { Store } from 'redux';
+
+import { ConnectedRouter } from 'connected-react-router';
+import { History } from 'history';
+
+import { DevTools } from 'containers/DevTools';
+import { router } from 'router';
+import { isProduction } from 'utils';
+
+{{- if .materialize }}
+import 'material-design-icons/iconfont/material-icons.css';
+import 'materialize-css';
+{{ end }}
+import 'sass/index.scss';
+{{- if .typescript }}
+
+interface IAppProps {
+  store: Store<any>;
+  history: History;
+}
+{{- end }}
+
+{{- if .typescript }}
+export const App = (props: IAppProps) => (
+{{- else }}
+export const App = props => (
+{{ end }}
+  <Provider store={props.store}>
+    <ConnectedRouter history={props.history}>
+      <div>
+        {router}
+        {!isProduction && <DevTools />}
+      </div>
+    </ConnectedRouter>
+  </Provider>
+);

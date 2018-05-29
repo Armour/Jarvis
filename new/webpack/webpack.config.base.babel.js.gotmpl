@@ -141,8 +141,8 @@ export default {
     new ProgressBarWebpackPlugin(),
     // Add Progressive Web Application manifest
     new WebpackPwaManifest({
-      name: '{{ .projectName }}',
       short_name: '{{ .projectShortname }}',
+      name: '{{ .projectName }}',
       description: '{{ .projectDescription }}',
       background_color: '{{ .projectBgColor }}',
       theme_color: '{{ .projectThemeColor }}',
@@ -150,19 +150,25 @@ export default {
       display: 'standalone',
       icons: [
         {
-          src: path.resolve('frontend/src/images/logo.png'),
-          sizes: [16, 32, 96, 128, 192, 256, 384, 512],
+          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
+          sizes: [192, 512],  // Generate general icons
         },
         {
-          src: path.resolve('frontend/src/images/apple-touch-icon.png'),
+          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
           sizes: [120, 152, 167, 180],
           destination: path.join('icons', 'ios'),
-          ios: true,
+          ios: true,  // Generate apple touch icons
         },
         {
-          src: path.resolve('frontend/src/images/android-icon.png'),
-          sizes: [192, 256],
-          destination: path.join('icons', 'android'),
+          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
+          sizes: 1024,
+          destination: path.join('icons', 'ios'),
+          ios: 'startup',  // Generate apple touch startup image
+        },
+        {
+          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
+          sizes: [144, 192, 512],
+          destination: path.join('icons', 'android'),  // Generate android icons
         },
       ],
     }),
