@@ -59,17 +59,15 @@ func GenerateFile(templatePath string, outputPath string, requireMap map[string]
 		// Check requirement
 		requireMatches := requireRE.FindAllStringSubmatch(f, -1)
 		for _, m := range requireMatches {
-			if len(m) > 1 {
-				for _, word := range m {
-					if r, ok := requireMap[word]; ok {
-						if r == false || r == "" {
-							missRequired = true
-							break
-						}
+			for _, word := range m {
+				if r, ok := requireMap[word]; ok {
+					if r == false || r == "" {
+						missRequired = true
+						break
 					}
 				}
-				outputFile = strings.Replace(outputFile, m[0], "", -1)
 			}
+			outputFile = strings.Replace(outputFile, m[0], "", -1)
 			if missRequired {
 				break
 			}
