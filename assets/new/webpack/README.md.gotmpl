@@ -20,6 +20,48 @@
 {{- end }}
 [![Template from jarvis](https://img.shields.io/badge/Hi-Jarvis-ff69b4.svg)](https://github.com/Armour/Jarvis)
 
+## Build & Run
+
+On development (with react-hot-reload and redux-devtools):
+
+```bash
+yarn dev
+```
+
+On production (with uglify-js and other optimazitions):
+
+```bash
+yarn prod
+```
+
+## Profile assets bundle
+
+Thanks to [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), we can analyze and then optimize our assets bundle through [DLL Plugin](https://webpack.js.org/plugins/dll-plugin/).
+
+```bash
+yarn profile
+```
+
+## Run test
+
+```bash
+yarn test
+```
+{{- if .materialize }}
+
+## Code coverage
+
+```bash
+yarn coveralls
+```
+{{- end }}
+
+## Deployment
+
+```bash
+yarn deploy
+```
+
 ## Contributing
 
 1. Fork it!

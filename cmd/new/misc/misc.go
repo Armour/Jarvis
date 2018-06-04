@@ -1,18 +1,19 @@
-package cmd
+// Package misc contains MiscCmd which generates new misc project using template.
+package misc
 
 import (
-	"github.com/armour/jarvis/utils"
+	"github.com/armour/jarvis/internal/pkg/utils"
 	"github.com/spf13/cobra"
 	"gopkg.in/AlecAivazis/survey.v1"
 )
 
-var miscQuestions = []*survey.Question{
+var questions = []*survey.Question{
 	{
 		Name: "projectName",
 		Prompt: &survey.Input{
 			Message: "Project name?",
 			Default: "my-project",
-			Help:    "The name of the new project, also will be used as npm package name.",
+			Help:    "The name of the new project.",
 		},
 	},
 	{
@@ -26,30 +27,27 @@ var miscQuestions = []*survey.Question{
 	},
 }
 
-var miscCmd = &cobra.Command{
+// MiscCmd generates new misc project using template.
+var MiscCmd = &cobra.Command{
 	Use:   "misc",
 	Short: "Start new project using misc template",
 	Long:  "Start new project using misc template",
 	Run: func(cmd *cobra.Command, args []string) {
-		miscAnswers := struct {
+		answers := struct {
 			ProjectName string
 			License     string
 		}{}
-		err := survey.Ask(miscQuestions, &miscAnswers)
+		err := survey.Ask(questions, &answers)
 		if err != nil {
 			utils.ExitOnError(err)
 		}
 
-		templatePath := "../new/misc"
+		templatePath := "../../../assets/new/misc"
 		requireMap := map[string]interface{}{}
 		replaceMap := map[string]interface{}{
-			"projectName": miscAnswers.ProjectName,
-			"license":     miscAnswers.License,
+			"projectName": answers.ProjectName,
+			"license":     answers.License,
 		}
 		utils.GenerateFile(templatePath, "", requireMap, replaceMap)
 	},
-}
-
-func init() {
-	newCmd.AddCommand(miscCmd)
 }

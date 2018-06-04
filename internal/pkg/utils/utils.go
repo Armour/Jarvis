@@ -1,3 +1,4 @@
+// Package utils contains all utility functions that will be used across Jarvis.
 package utils
 
 import (
@@ -22,7 +23,7 @@ var (
 	requireRE = regexp.MustCompile(requirePattern)
 )
 
-// ExitOnError prints the error message and exit with code 1
+// ExitOnError prints the error message and exit with code 1.
 func ExitOnError(err error) {
 	if err != nil {
 		fmt.Println(err)
@@ -30,7 +31,7 @@ func ExitOnError(err error) {
 	}
 }
 
-// RunCommand executes the input command
+// RunCommand executes input command and prints the result.
 func RunCommand(name string, arg ...string) {
 	cmd := exec.Command(name, arg...)
 	var outBuf bytes.Buffer
@@ -48,7 +49,7 @@ func RunCommand(name string, arg ...string) {
 	}
 }
 
-// GenerateFile generates files from template folder
+// GenerateFile generates files using template in assets folder.
 func GenerateFile(templatePath string, outputPath string, requireMap map[string]interface{}, replaceMap map[string]interface{}) {
 	fmt.Println("Generated file:")
 	templatesBox := packr.NewBox(templatePath)
@@ -56,7 +57,7 @@ func GenerateFile(templatePath string, outputPath string, requireMap map[string]
 		var missRequired bool
 		outputFile := f
 
-		// Check requirement
+		// Check requirement.
 		requireMatches := requireRE.FindAllStringSubmatch(f, -1)
 		for _, m := range requireMatches {
 			for _, word := range m {
@@ -76,7 +77,7 @@ func GenerateFile(templatePath string, outputPath string, requireMap map[string]
 			continue
 		}
 
-		// Get file content
+		// Read file content.
 		var content []byte
 		if strings.HasSuffix(outputFile, ".gotmpl") {
 			t := template.Must(template.New("template").Parse(templatesBox.String(f)))
@@ -89,7 +90,7 @@ func GenerateFile(templatePath string, outputPath string, requireMap map[string]
 			content = templatesBox.Bytes(f)
 		}
 
-		// Create and write to new file
+		// Create and write to new file.
 		outputFile = strings.TrimSuffix(outputFile, ".gotmpl")
 		if outputPath != "" {
 			path, err := filepath.Abs(filepath.Join(outputPath, outputFile))

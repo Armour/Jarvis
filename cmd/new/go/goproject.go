@@ -1,12 +1,13 @@
-package cmd
+// Package goproject contains GoCmd which generates new go project using template.
+package goproject
 
 import (
-	"github.com/armour/jarvis/utils"
+	"github.com/armour/jarvis/internal/pkg/utils"
 	"github.com/spf13/cobra"
 	"gopkg.in/AlecAivazis/survey.v1"
 )
 
-var goQuestions = []*survey.Question{
+var questions = []*survey.Question{
 	{
 		Name: "projectName",
 		Prompt: &survey.Input{
@@ -26,30 +27,27 @@ var goQuestions = []*survey.Question{
 	},
 }
 
-var goCmd = &cobra.Command{
+// GoCmd generates new go project using template.
+var GoCmd = &cobra.Command{
 	Use:   "go",
 	Short: "Start a new Go project",
 	Long:  "Start a new Go project",
 	Run: func(cmd *cobra.Command, args []string) {
-		miscAnswers := struct {
+		answers := struct {
 			ProjectName string
 			License     string
 		}{}
-		err := survey.Ask(miscQuestions, &miscAnswers)
+		err := survey.Ask(questions, &answers)
 		if err != nil {
 			utils.ExitOnError(err)
 		}
 
-		templatePath := "../new/go"
+		templatePath := "../../../assets/new/go"
 		requireMap := map[string]interface{}{}
 		replaceMap := map[string]interface{}{
-			"projectName": miscAnswers.ProjectName,
-			"license":     miscAnswers.License,
+			"projectName": answers.ProjectName,
+			"license":     answers.License,
 		}
 		utils.GenerateFile(templatePath, "", requireMap, replaceMap)
 	},
-}
-
-func init() {
-	newCmd.AddCommand(goCmd)
 }
