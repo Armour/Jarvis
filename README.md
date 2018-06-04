@@ -1,6 +1,7 @@
 # Jarvis
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/Armour/jarvis)](https://goreportcard.com/report/github.com/Armour/jarvis)
+[![Go Project Layout](https://img.shields.io/badge/go-layout-blue.svg)](https://github.com/golang-standards/project-layout)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Template from jarvis](https://img.shields.io/badge/Hi-Jarvis-ff69b4.svg)](https://github.com/Armour/Jarvis)
 
@@ -37,6 +38,7 @@ go get github.com/armour/jarvis
 
 ## Projects used Jarvis
 
+* [jarvis](https://github.com/Armour/jarvis) - My personal assistant
 * [express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
 * [go-node-builtins](https://github.com/Armour/go-node-builtins) - List of node.js builtin modules in Golang
 * [go-validate-npm-package-name](https://github.com/Armour/go-validate-npm-package-name) - Check if the given string is an acceptable npm package name in Golang
