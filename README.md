@@ -32,9 +32,13 @@ go get github.com/armour/jarvis
 
 * [Say something（#￣▽￣#）](https://asciinema.org/a/184121)
 
-* [Start new project using webpack templates](https://asciinema.org/a/184124)
+* [Sync global dot files](https://asciinema.org/a/185548)
 
-* [Sync global dot files](https://asciinema.org/a/184122)
+* [Start new project using webpack template](https://asciinema.org/a/185553)
+
+* [Start new project using go template](https://asciinema.org/a/185551)
+
+* [Start new project using misc template](https://asciinema.org/a/185559)
 
 ## Projects used Jarvis
 
