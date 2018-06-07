@@ -1,18 +1,19 @@
+# Install brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Init brew repo
-brew tap buo/cask-upgrade \
-         caskroom/cask \
-         caskroom/fonts \
-         heroku/brew \
-         homebrew/core \
-         homebrew/python \
-         homebrew/science \
-         homebrew/services \
-         homebrew/versions
+brew tap buo/cask-upgrade
+brew tap heroku/brew
+brew tap homebrew/core
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew tap homebrew/services
 brew update
 brew upgrade -y
 
 # Install brew stuff
 brew install git \
+             go \
              autojump \
              docker-clean\
              heroku \
@@ -30,7 +31,6 @@ brew install git \
              ccat \
              archey \
              colordiff \
-             stormssh \
              htop \
              ffmpeg
 
@@ -61,25 +61,23 @@ brew cask install qlcolorcode \
                   alfred \
                   docker \
                   visual-studio-code \
-                  alarm-clock \
                   lyricsx \
                   qq \
-                  nylas-mail \
                   kitematic \
                   db-browser-for-sqlite \
-                  oversight \
-                  vlc \
                   vox \
                   font-source-code-pro-for-powerline \
                   font-fira-code \
                   google-cloud-sdk \
-                  p4merge \
                   sketch \
                   now \
                   kap \
                   postman \
                   anaconda \
-                  telegram
+                  telegram \
+                  dotnet \
+                  dotnet-sdk \
+                  p4merge
 
 # Install brew cask stuff (optional)
 # brew cask install wireshark \
@@ -92,13 +90,25 @@ brew cask install qlcolorcode \
 #                   pycharm \
 #                   webstorm \
 #                   clip-studio-paint \
-#                   kaleidoscope \
 #                   burp-suite
 
 # Cleanup
 brew cleanup
 brew cask cleanup
 
+# Install oh-my-zsh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
 # Download zsh plugins
 git clone https://github.com/zdharma/fast-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Sync dot files
+go get -u github.com/armour/jarvis
+jarvis dot sync
+
+# Unblock neteasemusic :P
+echo '158.199.142.239 music.163.com p1.music.126.net p2.music.126.net p3.music.126.net p4.music.126.net' | sudo tee -a /etc/hosts
+
+# Enable hold and repeat for vscode on mactex
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false

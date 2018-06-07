@@ -10,4 +10,5 @@ concfg import material
 
 # Install extra apps
 scoop bucket add extras
-scoop install vscode anaconda3 hyper kitematic now-cli p4merge shadowsocks slack telegram gcloud postman
+scoop install vscode anaconda3 hyper p4merge
+# scoop install kitematic now-cli shadowsocks slack telegram gcloud postman
