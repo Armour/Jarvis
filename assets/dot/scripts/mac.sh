@@ -14,11 +14,12 @@ brew upgrade -y
 # Install brew stuff
 brew install git \
              go \
+             cmake \
+             qt \
              autojump \
              docker-clean\
              heroku \
              libpng \
-             mono \
              nginx \
              node \
              postgresql \
@@ -77,20 +78,25 @@ brew cask install qlcolorcode \
                   telegram \
                   dotnet \
                   dotnet-sdk \
+                  simpholders \
+                  mono-mdk \
+                  iina \
+                  league-of-legends \
+                  djay-pro \
+                  mactex \
+                  texmaker \
+                  appcode \
+                  clion \
+                  pycharm \
+                  webstorm \
+                  goland \
+                  intellij-idea \
+                  android-studio \
+                  burp-suite \
+                  wireshark \
+                  qt-creator \
+                  clip-studio-paint \
                   p4merge
-
-# Install brew cask stuff (optional)
-# brew cask install wireshark \
-#                   texmaker \
-#                   mactex \
-#                   skype \
-#                   spotify \
-#                   appcode \
-#                   clion \
-#                   pycharm \
-#                   webstorm \
-#                   clip-studio-paint \
-#                   burp-suite
 
 # Cleanup
 brew cleanup
