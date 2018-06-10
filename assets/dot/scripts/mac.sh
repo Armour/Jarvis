@@ -7,6 +7,7 @@ brew tap heroku/brew
 brew tap homebrew/core
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 brew tap homebrew/services
 brew update
 brew upgrade -y
@@ -95,8 +96,9 @@ brew cask install qlcolorcode \
                   burp-suite \
                   wireshark \
                   qt-creator \
-                  clip-studio-paint \
-                  p4merge
+                  shuttle \
+                  p4v \
+                  clip-studio-paint
 
 # Cleanup
 brew cleanup
