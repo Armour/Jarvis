@@ -97,6 +97,7 @@ brew cask install qlcolorcode \
                   wireshark \
                   qt-creator \
                   shuttle \
+                  minecraft \
                   p4v \
                   clip-studio-paint
 
