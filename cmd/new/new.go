@@ -4,6 +4,7 @@ package new
 import (
 	"github.com/armour/jarvis/cmd/new/go"
 	"github.com/armour/jarvis/cmd/new/misc"
+	"github.com/armour/jarvis/cmd/new/python"
 	"github.com/armour/jarvis/cmd/new/webpack"
 	"github.com/spf13/cobra"
 )
@@ -18,5 +19,6 @@ var NewCmd = &cobra.Command{
 func init() {
 	NewCmd.AddCommand(goproject.GoCmd)
 	NewCmd.AddCommand(misc.MiscCmd)
+	NewCmd.AddCommand(python.PythonCmd)
 	NewCmd.AddCommand(webpack.WebpackCmd)
 }
