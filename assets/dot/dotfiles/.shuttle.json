@@ -1,0 +1,25 @@
+{
+  "editor": "default",
+  "launch_at_login": true,
+  "terminal": "iTerm",
+  "iTerm_version": "stable",
+  "default_theme": "Armour",
+  "open_in": "tab",
+  "show_ssh_config_hosts": false,
+  "ssh_config_ignore_hosts": [],
+  "ssh_config_ignore_keywords": [],
+  "hosts": [
+    {
+      "My Servers": [
+        {
+          "name": "Digital Ocean",
+          "cmd": "ssh username@blog.example.com"
+        },
+        {
+          "name": "Test",
+          "cmd": "ls -al"
+        }
+      ]
+    }
+  ]
+}

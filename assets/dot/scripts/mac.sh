@@ -7,6 +7,7 @@ brew tap heroku/brew
 brew tap homebrew/core
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 brew tap homebrew/services
 brew update
 brew upgrade -y
@@ -14,11 +15,12 @@ brew upgrade -y
 # Install brew stuff
 brew install git \
              go \
+             cmake \
+             qt \
              autojump \
              docker-clean\
              heroku \
              libpng \
-             mono \
              nginx \
              node \
              postgresql \
@@ -77,20 +79,27 @@ brew cask install qlcolorcode \
                   telegram \
                   dotnet \
                   dotnet-sdk \
-                  p4merge
-
-# Install brew cask stuff (optional)
-# brew cask install wireshark \
-#                   texmaker \
-#                   mactex \
-#                   skype \
-#                   spotify \
-#                   appcode \
-#                   clion \
-#                   pycharm \
-#                   webstorm \
-#                   clip-studio-paint \
-#                   burp-suite
+                  simpholders \
+                  mono-mdk \
+                  iina \
+                  league-of-legends \
+                  djay-pro \
+                  mactex \
+                  texmaker \
+                  appcode \
+                  clion \
+                  pycharm \
+                  webstorm \
+                  goland \
+                  intellij-idea \
+                  android-studio \
+                  burp-suite \
+                  wireshark \
+                  qt-creator \
+                  shuttle \
+                  minecraft \
+                  p4v \
+                  clip-studio-paint
 
 # Cleanup
 brew cleanup
