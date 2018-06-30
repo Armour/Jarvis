@@ -30,8 +30,8 @@ var questions = []*survey.Question{
 // MiscCmd generates new misc project using template.
 var MiscCmd = &cobra.Command{
 	Use:   "misc",
-	Short: "Start new project using misc template",
-	Long:  "Start new project using misc template",
+	Short: "Start a new project using 'misc' template",
+	Long:  "Start a new project using 'misc' template",
 	Run: func(cmd *cobra.Command, args []string) {
 		answers := struct {
 			ProjectName string

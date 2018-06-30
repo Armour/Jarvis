@@ -109,8 +109,8 @@ var questions = []*survey.Question{
 // WebpackCmd generates new webpack project using template.
 var WebpackCmd = &cobra.Command{
 	Use:   "webpack",
-	Short: "Start new project using webpack template",
-	Long:  "Start new project using webpack template",
+	Short: "Start a new project using 'webpack' template",
+	Long:  "Start a new project using 'webpack' template",
 	Run: func(cmd *cobra.Command, args []string) {
 		answers := struct {
 			ProjectName        string

@@ -30,8 +30,8 @@ var questions = []*survey.Question{
 // GoCmd generates new go project using template.
 var GoCmd = &cobra.Command{
 	Use:   "go",
-	Short: "Start a new Go project",
-	Long:  "Start a new Go project",
+	Short: "Start a new project using 'go' template",
+	Long:  "Start a new project using 'go' template",
 	Run: func(cmd *cobra.Command, args []string) {
 		answers := struct {
 			ProjectName string

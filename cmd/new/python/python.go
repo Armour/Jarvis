@@ -29,9 +29,9 @@ var questions = []*survey.Question{
 
 // PythonCmd generates new python project using template.
 var PythonCmd = &cobra.Command{
-	Use:   "misc",
-	Short: "Start a new python project",
-	Long:  "Start a new python project",
+	Use:   "python",
+	Short: "Start a new project using 'python' template",
+	Long:  "Start a new project using 'python' template",
 	Run: func(cmd *cobra.Command, args []string) {
 		answers := struct {
 			ProjectName string
