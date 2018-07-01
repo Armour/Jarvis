@@ -1,13 +1,13 @@
 # {{ .projectName }}
 
-[![Dependency Status](https://david-dm.org/Armour/{{ .projectName }}/status.svg)](https://david-dm.org/Armour/{{ .projectName }})
-[![DevDependency Status](https://david-dm.org/Armour/{{ .projectName }}/dev-status.svg)](https://david-dm.org/Armour/{{ .projectName }}?type=dev)
+[![Dependency Status](https://david-dm.org/{{ .githubUser }}/{{ .projectName }}/status.svg)](https://david-dm.org/{{ .githubUser }}/{{ .projectName }})
+[![DevDependency Status](https://david-dm.org/{{ .githubUser }}/{{ .projectName }}/dev-status.svg)](https://david-dm.org/{{ .githubUser }}/{{ .projectName }}?type=dev)
 {{- if .ci }}
-[![CircleCI](https://circleci.com/gh/Armour/{{ .projectName }}/tree/master.svg?style=shield)](https://circleci.com/gh/Armour/{{ .projectName }}/tree/master)
-[![Appveyor](https://ci.appveyor.com/api/projects/status/github/Armour/{{ .projectName }}?svg=true&branch=master)](https://ci.appveyor.com/api/projects/status/github/Armour/{{ .projectName }}?svg=true&branch=master)
+[![CircleCI](https://circleci.com/gh/{{ .githubUser }}/{{ .projectName }}/tree/master.svg?style=shield)](https://circleci.com/gh/{{ .githubUser }}/{{ .projectName }}/tree/master)
+[![Appveyor](https://ci.appveyor.com/api/projects/status/github/{{ .githubUser }}/{{ .projectName }}?svg=true&branch=master)](https://ci.appveyor.com/api/projects/status/github/{{ .githubUser }}/{{ .projectName }}?svg=true&branch=master)
 {{- end }}
 {{- if .coverallToken }}
-[![Coverage Status](https://coveralls.io/repos/github/Armour/{{ .projectName }}/badge.svg?branch=master)](https://coveralls.io/github/Armour/{{ .projectName }}?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/{{ .githubUser }}/{{ .projectName }}/badge.svg?branch=master)](https://coveralls.io/github/{{ .githubUser }}/{{ .projectName }}?branch=master)
 {{- end }}
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![Tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
@@ -73,10 +73,9 @@ yarn deploy
 ## License
 
 {{ if eq .license "MIT" -}}
-[MIT License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
+[MIT License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
 {{- else if eq .license "GPL" -}}
-[GPL License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
+[GPL License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
 {{- else if eq .license "Apache" -}}
-[Apache License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
-}}
+[Apache License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
 {{- end }}

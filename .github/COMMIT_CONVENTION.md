@@ -7,7 +7,7 @@
 Messages must be matched by the following regex:
 
 ``` js
-/^(Revert: )?(Feat|Fix|Docs|Style|Refactor|Perf|Test|Build|CI|Types)(\(.+\))?: .{1,90}/
+/^(Revert: )?(Feature|Fix|Docs|Improvement|Config|Examples|Security|Style|Refactor|Performance|Test|Build|CI|Types)(\(.+\))?: .{1,80}/
 ```
 
 ## Commit Message Format
@@ -83,7 +83,7 @@ The removed `inject` wasn't generaly useful for directives so there should be no
 
 ### Revert
 
-If the commit reverts a previous commit, it should begin with `Revert:`, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
+If the commit reverts a previous commit, it should begin with `Revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
 
 ### Type
 
@@ -91,16 +91,27 @@ Must be one of the following:
 
 * **Build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm, yarn)
 * **CI**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+* **Config**: Configuration changes
 * **Docs**: Documentation only changes
-* **Feat**: A new feature
+* **Examples**: Changes for example code
+* **Feature**: A new feature
 * **Fix**: A bug fix
-* **Perf**: A code change that improves performance
+* **Improvement**: Backwards-compatible enhancement changes
+* **Performance**: A code change that improves performance
 * **Refactor**: A code change that neither fixes a bug nor adds a feature
+* **Security**: A security issue fix
 * **Style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 * **Test**: Adding missing tests or correcting existing tests
 * **Types**: Typescript related changes
 
-If the prefix is `Feat`, `Fix` or `Perf`, it will appear in the changelog. However if there is any [BREAKING CHANGE](#footer), the commit will always appear in the changelog.
+If the prefix is in the below types, it will appear in the changelog. However if there is any [BREAKING CHANGE](#footer), the commit will always appear in the changelog.
+
+* `Examples`
+* `Feature`
+* `Fix`
+* `Perf`
+* `Improvement`
+* `Security`
 
 ### Scope
 

@@ -44,7 +44,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
     git checkout -b my-new-feature master
     ```
 
-1. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
+1. Commit your changes using a descriptive commit message that follows our [commit message convention](#commit-message-convention). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
 
     ```shell
     git commit -am 'Add some feature'
@@ -89,7 +89,7 @@ from the main (upstream) repository:
     git pull
     ```
 
-## Commit Message Guidelines
+## Commit Message Convention
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more readable messages** that are easy to follow when looking through the **project history**.  But also, we use the git commit messages to **generate the change log**.
 

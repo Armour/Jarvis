@@ -9,6 +9,14 @@ import (
 
 var questions = []*survey.Question{
 	{
+		Name: "githubUser",
+		Prompt: &survey.Input{
+			Message: "Github Username?",
+			Default: "Armour",
+			Help:    "The username of your github account.",
+		},
+	},
+	{
 		Name: "projectName",
 		Prompt: &survey.Input{
 			Message: "Project name?",
@@ -113,6 +121,7 @@ var WebpackCmd = &cobra.Command{
 	Long:  "Start a new project using 'webpack' template",
 	Run: func(cmd *cobra.Command, args []string) {
 		answers := struct {
+			GithubUser         string
 			ProjectName        string
 			ProjectShortname   string
 			ProjectDescription string
@@ -149,6 +158,7 @@ var WebpackCmd = &cobra.Command{
 			"ci":                 answers.CI,
 			"coverage":           answers.CoverallToken,
 			"docker":             answers.Docker,
+			"githubUser":         answers.GithubUser,
 			"materialize":        answers.CSSFramework == "Materialize",
 			"postgres":           answers.Database == "Postgres",
 			"react":              answers.JsFramework == "React",

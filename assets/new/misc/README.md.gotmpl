@@ -12,15 +12,14 @@
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/Armour/{{ .projectName }}/blob/master/.github/CONTRIBUTING.md)
+See [CONTRIBUTING.md](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/.github/CONTRIBUTING.md)
 
 ## License
 
 {{ if eq .license "MIT" -}}
-[MIT License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
+[MIT License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
 {{- else if eq .license "GPL" -}}
-[GPL License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
+[GPL License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
 {{- else if eq .license "Apache" -}}
-[Apache License](https://github.com/Armour/{{ .projectName }}/blob/master/LICENSE)
-}}
+[Apache License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
 {{- end }}

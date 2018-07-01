@@ -9,6 +9,14 @@ import (
 
 var questions = []*survey.Question{
 	{
+		Name: "githubUser",
+		Prompt: &survey.Input{
+			Message: "Github Username?",
+			Default: "Armour",
+			Help:    "The username of your github account.",
+		},
+	},
+	{
 		Name: "projectName",
 		Prompt: &survey.Input{
 			Message: "Project name?",
@@ -34,6 +42,7 @@ var PythonCmd = &cobra.Command{
 	Long:  "Start a new project using 'python' template",
 	Run: func(cmd *cobra.Command, args []string) {
 		answers := struct {
+			GithubUser  string
 			ProjectName string
 			License     string
 		}{}
@@ -45,6 +54,7 @@ var PythonCmd = &cobra.Command{
 		templatePath := "../../../assets/new/python"
 		requireMap := map[string]interface{}{}
 		replaceMap := map[string]interface{}{
+			"githubUser":  answers.GithubUser,
 			"projectName": answers.ProjectName,
 			"license":     answers.License,
 		}
