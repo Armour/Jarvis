@@ -43,11 +43,15 @@ go get github.com/armour/jarvis
 
 ## Projects used Jarvis
 
-* [jarvis](https://github.com/Armour/jarvis) - My personal assistant
-* [express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
-* [go-node-builtins](https://github.com/Armour/go-node-builtins) - List of node.js builtin modules in Golang
-* [go-validate-npm-package-name](https://github.com/Armour/go-validate-npm-package-name) - Check if the given string is an acceptable npm package name in Golang
-* [sentence-classifier-based-on-word-similarity](https://github.com/Armour/sentence-classifier-based-on-word-similarity) - A very simple sentence classifier based on word similarity with NLTK and rake_nltk package
+* Go:
+  * [armour/jarvis](https://github.com/Armour/jarvis) - Personal assistant
+  * [armour/go-node-builtins](https://github.com/Armour/go-node-builtins) - List of node.js builtin modules in Golang
+  * [armour/go-validate-npm-package-name](https://github.com/Armour/go-validate-npm-package-name) - Check if the given string is an acceptable npm package name in Golang
+* Python:
+  * [armour/pixiv-spider](https://github.com/Armour/pixiv-spider) - A simple Pixiv Crawler
+  * [armour/sentence-classifier-based-on-word-similarity](https://github.com/Armour/sentence-classifier-based-on-word-similarity) - A very simple sentence classifier based on word similarity with NLTK and rake_nltk package
+* Webpack:
+  * [armour/express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
 
 ## Contributing
 
