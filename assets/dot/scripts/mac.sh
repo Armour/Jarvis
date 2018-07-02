@@ -13,93 +13,97 @@ brew update
 brew upgrade -y
 
 # Install brew stuff
-brew install git \
-             go \
-             cmake \
-             qt \
-             autojump \
-             docker-clean\
-             heroku \
-             libpng \
-             nginx \
-             node \
-             postgresql \
-             redis \
-             yarn \
-             wget \
-             sqlmap \
-             taglib \
-             tree \
-             ccat \
-             archey \
-             colordiff \
-             htop \
-             ffmpeg
+brew install archey \
+            autojump \
+            ccat \
+            cmake \
+            colordiff \
+            dep \
+            docker-clean \
+            ffmpeg \
+            git \
+            go \
+            heroku \
+            htop \
+            libpng \
+            nginx \
+            node \
+            postgresql \
+            qt \
+            redis \
+            sqlmap \
+            taglib \
+            tree \
+            wget \
+            yarn
 
 # Install brew cask stuff
-brew cask install qlcolorcode \
-                  qlstephen \
-                  qlmarkdown \
-                  quicklook-json \
-                  qlimagesize \
-                  qlvideo \
-                  quicklookapk \
-                  qladdict \
-                  jupyter-notebook-ql \
-                  betterzip \
-                  neteasemusic \
-                  teamviewer \
-                  google-chrome \
-                  slack \
-                  lingon-x \
-                  shadowsocksx-ng \
-                  appzapper \
-                  iterm2 \
-                  scroll-reverser \
-                  dash \
-                  unity \
-                  postico \
-                  rowanj-gitx \
-                  alfred \
-                  docker \
-                  visual-studio-code \
-                  lyricsx \
-                  qq \
-                  kitematic \
-                  db-browser-for-sqlite \
-                  vox \
-                  font-source-code-pro-for-powerline \
-                  font-fira-code \
-                  google-cloud-sdk \
-                  sketch \
-                  now \
-                  kap \
-                  postman \
+brew cask install alfred \
                   anaconda \
-                  telegram \
+                  android-studio \
+                  appcode \
+                  appzapper \
+                  betterzip \
+                  burp-suite \
+                  clion \
+                  dash \
+                  db-browser-for-sqlite \
+                  discord \
+                  djay-pro \
+                  docker \
                   dotnet \
                   dotnet-sdk \
-                  simpholders \
-                  mono-mdk \
-                  iina \
-                  league-of-legends \
-                  djay-pro \
-                  mactex \
-                  texmaker \
-                  appcode \
-                  clion \
-                  pycharm \
-                  webstorm \
+                  font-fira-code \
+                  font-source-code-pro-for-powerline \
                   goland \
+                  google-chrome \
+                  google-cloud-sdk \
+                  iina \
                   intellij-idea \
-                  android-studio \
-                  burp-suite \
-                  wireshark \
-                  qt-creator \
-                  shuttle \
+                  iterm2 \
+                  java8 \
+                  jupyter-notebook-ql \
+                  kap \
+                  kitematic \
+                  league-of-legends \
+                  lingon-x \
+                  lyricsx \
+                  mactex \
                   minecraft \
+                  mono-mdk \
+                  neteasemusic \
+                  now \
                   p4v \
-                  clip-studio-paint
+                  postico \
+                  postman \
+                  pycharm \
+                  qladdict \
+                  qlcolorcode \
+                  qlimagesize \
+                  qlmarkdown \
+                  qlstephen \
+                  qlvideo \
+                  qq \
+                  qt-creator \
+                  quicklook-json \
+                  quicklookapk \
+                  rowanj-gitx \
+                  scroll-reverser \
+                  shadowsocksx-ng \
+                  shuttle \
+                  simpholders \
+                  sip \
+                  sketch \
+                  slack \
+                  teamviewer \
+                  telegram \
+                  texmaker \
+                  unity \
+                  visual-studio-code \
+                  vox \
+                  webstorm \
+                  wechat \
+                  wireshark
 
 # Cleanup
 brew cleanup
@@ -112,12 +116,12 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 git clone https://github.com/zdharma/fast-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# Sync dot files
-go get -u github.com/armour/jarvis
-jarvis dot sync
-
 # Unblock neteasemusic :P
 echo '158.199.142.239 music.163.com p1.music.126.net p2.music.126.net p3.music.126.net p4.music.126.net' | sudo tee -a /etc/hosts
 
-# Enable hold and repeat for vscode on mactex
+# Enable hold and repeat for vscode on Mac
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+# Sync dot files
+go get -u github.com/armour/jarvis
+echo "Please run 'jarvis dot sync' to sync your dot files."

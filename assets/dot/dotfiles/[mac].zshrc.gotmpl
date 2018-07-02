@@ -56,7 +56,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  autojump django docker encode64 fast-syntax-highlighting git npm osx pip pod python redis-cli sudo urltools yarn zsh-autosuggestions
+  autojump django docker encode64 fast-syntax-highlighting git git-extras history npm osx pip pod python redis-cli sudo urltools yarn zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,9 +107,10 @@ alias vimconf='vim ~/.vimrc'
 alias zshconf='vim ~/.zshrc'
 alias szsh='source ~/.zshrc'
 alias htop='sudo htop'
-alias brews='brew update && brew upgrade -y && brew cu -y && brew cleanup && brew cask cleanup'
+alias brews='brew update && brew upgrade -y && brew cu -ay && brew cleanup && brew cask cleanup'
 alias cat='ccat'
 alias diff='colordiff'
+alias v='vim'
 alias vi='vim'
 alias ll='ls -l'
 alias la='ls -a'
@@ -125,6 +126,7 @@ alias LLA='ls -al'
 alias py='python3'
 alias rb='ruby'
 alias gs='git status'
+alias plz='sudo'
 alias -s md='open'
 alias -s rar='unrar -x'
 alias -s gz='tar -xzvf'

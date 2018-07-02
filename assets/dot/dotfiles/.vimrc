@@ -1,15 +1,14 @@
-set nocompatible
+" basic config
 syntax on
 filetype plugin indent on
+set nocompatible
+set autoread
+set smartindent
+set showmatch
 
 " set maplearder key
 let mapleader = ","
 let maplocalleader = ","
-
-" basic config
-set autoread
-set smartindent
-set showmatch
 
 " replace tab with 4 spaces
 set tabstop=4
@@ -24,7 +23,7 @@ set number
 " encoding
 set encoding=utf-8
 set termencoding=utf-8
-set fileencodings=ucs-bom,utf-8,gbk,cp936,gb2312,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencodings=utf-8
 
 " backup
 set nobackup
@@ -57,30 +56,11 @@ func! CompileRunGcc()
     endif
 endfunc
 
-" <F6> Gdb for C,C++
-noremap <F6> :call Rungdb()<CR>
-func! Rungdb()
-    exec "w"
-    if &filetype == 'c'
-        exec "!gcc % -g -o %<"
-        exec "!gdb ./%<"
-    elseif &filetype == 'cpp'
-        exec "!g++ -std=c++11 % -g -o %<"
-        exec "!gdb ./%<"
-    endif
-endfunc
-
 " arrow key is evil!!
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
-" insert one line without stay in insert mode
-noremap <C-o> o<esc><CR>
-
-" insert one space without stay in insert mode
-noremap <C-i> i <esc>
 
 " disable auto insert comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

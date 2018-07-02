@@ -114,8 +114,7 @@ module.exports = {
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
     {{- if .mac }}
     shell: '/bin/zsh',
-    {{- end }}
-    {{- if .windows }}
+    {{- else if .windows }}
     shell: 'C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe',
     {{- end }}
 
@@ -123,8 +122,7 @@ module.exports = {
     // by default `['--login']` will be used
     {{- if .mac }}
     shellArgs: ['--login'],
-    {{- end }}
-    {{- if .windows }}
+    {{- else if .windows }}
     shellArgs: [],
     {{- end }}
 

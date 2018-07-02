@@ -10,16 +10,13 @@
   "ssh_config_ignore_keywords": [],
   "hosts": [
     {
-      "My Servers": [
-        {
-          "name": "Digital Ocean",
-          "cmd": "ssh username@blog.example.com"
-        },
-        {
-          "name": "Test",
-          "cmd": "ls -al"
-        }
-      ]
+      "name": "Digital Ocean",
+      "cmd": "ssh username@server.ip.here",
+      "comment": "This is my digital ocean server"
+    },
+    {
+      "name": "Test Command",
+      "cmd": "ls -al"
     }
   ]
 }

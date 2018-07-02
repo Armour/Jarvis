@@ -12,8 +12,7 @@
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
-{{- end }}
-{{- if .mac -}}
+{{- else if .mac - }}
 # General
 .DS_Store
 
@@ -22,8 +21,7 @@
 
 # Files that might appear in the root of a volume
 .Trashes
-{{- end }}
-{{- if .windows -}}
+{{- else if .windows - }}
 # Windows thumbnail cache files
 Thumbs.db
 

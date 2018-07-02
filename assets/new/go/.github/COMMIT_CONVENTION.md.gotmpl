@@ -36,7 +36,7 @@ Docs(changelog): update changelog to beta.5
 ```
 
 ```text
-Feat($browser): onUrlChange event (popstate/hashchange/polling)
+Feature($browser): onUrlChange event (popstate/hashchange/polling)
 
 Added new event to $browser:
 - forward popstate event if available
@@ -109,7 +109,7 @@ If the prefix is in the below types, it will appear in the changelog. However if
 * `Examples`
 * `Feature`
 * `Fix`
-* `Perf`
+* `Performance`
 * `Improvement`
 * `Security`
 
