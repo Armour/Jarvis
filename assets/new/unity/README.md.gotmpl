@@ -1,0 +1,25 @@
+# {{ .projectName }}
+
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+{{- if eq .license "MIT" }}
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+{{- else if eq .license "GPL" }}
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+{{- else if eq .license "Apache" }}
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+{{- end }}
+[![Template from jarvis](https://img.shields.io/badge/Hi-Jarvis-ff69b4.svg)](https://github.com/Armour/Jarvis)
+
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/.github/CONTRIBUTING.md)
+
+## License
+
+{{ if eq .license "MIT" -}}
+[MIT License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
+{{- else if eq .license "GPL" -}}
+[GPL License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
+{{- else if eq .license "Apache" -}}
+[Apache License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
+{{- end }}
