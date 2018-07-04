@@ -7,7 +7,7 @@
 
 > "Perhaps, if you intend to visit other planets, we should improve the exosystems."
 
-My personal assistant 🤖 [still under development]
+Personal assistant 🤖 [still under development]
 
 ## Install
 
@@ -17,11 +17,11 @@ go get github.com/armour/jarvis
 
 ## Todos
 
-* [x] Webpack project generator
-* [ ] Parcel project generator
 * [x] Go project generator
 * [x] Python project generator
+* [x] Unity project generator
 * [x] Misc project generator
+* [x] Webpack project generator
 * [x] Dot file backup/sync
 * [x] Play around with [Hitokoto](https://hitokoto.cn/) api
 * [ ] Google Home integration
