@@ -38,7 +38,8 @@ brew install archey \
             yarn
 
 # Install brew cask stuff
-brew cask install alfred \
+brew cask install adobe-creative-cloud \
+                  alfred \
                   anaconda \
                   android-studio \
                   appcode \
@@ -50,7 +51,7 @@ brew cask install alfred \
                   db-browser-for-sqlite \
                   discord \
                   djay-pro \
-                  docker \
+                  docker-edge \
                   dotnet \
                   dotnet-sdk \
                   font-fira-code \
@@ -121,6 +122,9 @@ echo '158.199.142.239 music.163.com p1.music.126.net p2.music.126.net p3.music.1
 
 # Enable hold and repeat for vscode on Mac
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+# Adobe creative cloud
+echo "To complete the installation of Cask adobe-creative-cloud, you must also run the installer at '/usr/local/Caskroom/adobe-creative-cloud/latest/Creative Cloud Installer.app'"
 
 # Sync dot files
 go get -u github.com/armour/jarvis
