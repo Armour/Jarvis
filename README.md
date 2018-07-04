@@ -56,6 +56,7 @@ go get github.com/armour/jarvis
 * Webpack:
   * [armour/express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
 * Misc:
+  * [armour/Multiplayer-FPS](https://github.com/Armour/Multiplayer-FPS) - A multiplayer first person shooter game based on Unity Game Engine
   * [armour/Magic-Tower-Qt](https://github.com/Armour/Magic-Tower-Qt) - A C++(with Qt) version Magic-Tower game
 
 ## Contributing
