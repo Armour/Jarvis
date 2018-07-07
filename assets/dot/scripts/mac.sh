@@ -15,6 +15,7 @@ brew upgrade -y
 # Install brew stuff
 brew install archey \
             autojump \
+            asciinema \
             ccat \
             cmake \
             colordiff \
@@ -26,6 +27,7 @@ brew install archey \
             heroku \
             htop \
             libpng \
+            mono \
             nginx \
             node \
             postgresql \
@@ -71,7 +73,6 @@ brew cask install adobe-creative-cloud \
                   lyricsx \
                   mactex \
                   minecraft \
-                  mono-mdk \
                   neteasemusic \
                   now \
                   p4v \
