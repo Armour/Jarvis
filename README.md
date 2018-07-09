@@ -33,6 +33,7 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 * [x] Python project generator
 * [x] Unity project generator
 * [x] Misc project generator
+* [x] Npm project generator
 * [x] React project generator
 * [x] Dot file backup/sync
 * [x] Play around with [Hitokoto](https://hitokoto.cn/) api
@@ -69,9 +70,10 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
   * [armour/express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
 * Unity:
   * [armour/Multiplayer-FPS](https://github.com/Armour/Multiplayer-FPS) - A multiplayer first person shooter game based on Unity Game Engine
+* Npm:
+  * [armour/commitlint-config-armour)](https://github.com/Armour/commitlint-config-armour) - My shareable config for commitlint
 * Misc:
   * [armour/Magic-Tower-Qt](https://github.com/Armour/Magic-Tower-Qt) - A C++(with Qt) version Magic-Tower game
-  * [armour/commitlint-config-armour)](https://github.com/Armour/commitlint-config-armour) - My shareable config for commitlint
 
 ## Contributing
 

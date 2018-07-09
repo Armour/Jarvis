@@ -4,6 +4,7 @@ package new
 import (
 	"github.com/armour/jarvis/cmd/new/go"
 	"github.com/armour/jarvis/cmd/new/misc"
+	"github.com/armour/jarvis/cmd/new/npm"
 	"github.com/armour/jarvis/cmd/new/python"
 	"github.com/armour/jarvis/cmd/new/react"
 	"github.com/armour/jarvis/cmd/new/unity"
@@ -20,6 +21,7 @@ var NewCmd = &cobra.Command{
 func init() {
 	NewCmd.AddCommand(goproject.GoCmd)
 	NewCmd.AddCommand(misc.MiscCmd)
+	NewCmd.AddCommand(npm.NpmCmd)
 	NewCmd.AddCommand(python.PythonCmd)
 	NewCmd.AddCommand(unity.UnityCmd)
 	NewCmd.AddCommand(react.ReactCmd)

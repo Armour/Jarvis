@@ -14,8 +14,8 @@ trim_trailing_whitespace = true
 [*.md]
 trim_trailing_whitespace = false
 
-# Indentation override for js(x){{ if .typescript }}, ts(x){{ end }} files
-[*.{js,jsx{{ if .typescript }},ts,tsx{{ end }}}]
+# Trailing space override for js file
+[*.js]
 indent_size = 2
 indent_style = space
 
@@ -33,8 +33,3 @@ indent_style = space
 [*.{json,yml}]
 indent_size = 2
 indent_style = space
-
-# Minified JavaScript files shouldn't be changed
-[**.min.js]
-indent_style = ignore
-insert_final_newline = ignore

@@ -1,0 +1,31 @@
+{
+  "name": "{{ .projectName }}",
+  "version": "0.0.1",
+  "description": "{{ .projectDescription }}",
+  "license": "{{ .license }}",
+  "author": "{{ .author }} <{{ .email }}>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/{{ .githubUser }}/{{ .projectName }}.git"
+  },
+  "bugs": "https://github.com/{{ .githubUser }}/{{ .projectName }}/issues",
+  "homepage": "https://github.com/{{ .githubUser }}/{{ .projectName }}#readme",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "keywords": [
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "7.0.0",
+    "commitlint-config-armour": "1.0.4",
+    "husky": "1.0.0-rc.12"
+  },
+  "dependencies": {
+  }
+}
