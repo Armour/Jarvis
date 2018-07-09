@@ -2,6 +2,7 @@
 package goproject
 
 import (
+	"github.com/armour/jarvis/internal/pkg/config"
 	"github.com/armour/jarvis/internal/pkg/utils"
 	"github.com/spf13/cobra"
 	"gopkg.in/AlecAivazis/survey.v1"
@@ -9,20 +10,21 @@ import (
 
 var questions = []*survey.Question{
 	{
-		Name: "githubUser",
-		Prompt: &survey.Input{
-			Message: "Github Username?",
-			Default: "Armour",
-			Help:    "The username of your github account.",
-		},
-	},
-	{
 		Name: "projectName",
 		Prompt: &survey.Input{
 			Message: "Project name?",
 			Default: "my-project",
 			Help:    "The name of the new project, also will be used as go package name.",
 		},
+		Validate: survey.Required,
+	},
+	{
+		Name: "projectDescription",
+		Prompt: &survey.Input{
+			Message: "Project Description?",
+			Help:    "The description of the new project.",
+		},
+		Validate: survey.Required,
 	},
 	{
 		Name: "license",
@@ -30,8 +32,8 @@ var questions = []*survey.Question{
 			Message: "Choose a license:",
 			Options: []string{"MIT", "GPL", "Apache"},
 			Default: "MIT",
-			Help:    "The license of this project.",
 		},
+		Validate: survey.Required,
 	},
 }
 
@@ -42,22 +44,23 @@ var GoCmd = &cobra.Command{
 	Long:  "Start a new project using 'go' template",
 	Run: func(cmd *cobra.Command, args []string) {
 		answers := struct {
-			GithubUser  string
-			ProjectName string
-			License     string
+			License            string
+			ProjectDescription string
+			ProjectName        string
 		}{}
-		err := survey.Ask(questions, &answers)
-		if err != nil {
+		if err := survey.Ask(questions, &answers); err != nil {
 			utils.ExitOnError(err)
 		}
-
-		templatePath := "../../../assets/new/go"
+		templates := []string{"new/go", "new/github", "new/license"}
 		requireMap := map[string]interface{}{}
 		replaceMap := map[string]interface{}{
-			"githubUser":  answers.GithubUser,
-			"projectName": answers.ProjectName,
-			"license":     answers.License,
+			"author":             config.GetConfigByField("author"),
+			"email":              config.GetConfigByField("email"),
+			"githubUser":         config.GetConfigByField("githubUser"),
+			"license":            answers.License,
+			"projectDescription": answers.ProjectDescription,
+			"projectName":        answers.ProjectName,
 		}
-		utils.GenerateFile(templatePath, "", requireMap, replaceMap)
+		utils.GenerateFile(templates, "", requireMap, replaceMap)
 	},
 }

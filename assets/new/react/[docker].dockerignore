@@ -1,0 +1,38 @@
+# General
+.DS_Store
+*~
+*.swp
+*.log
+
+# Thumbnails
+._*
+Thumbs.db
+
+# Trash folder or files
+.Trashes
+.Trash-*
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Editor config folder
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Code coverage
+coverage/
+.coveralls.yml
+
+# Misc
+.awcache/
+.github/
+node_modules/
+dist/
+yarn.lock

@@ -58,6 +58,7 @@ brew cask install adobe-creative-cloud \
                   dotnet-sdk \
                   font-fira-code \
                   font-source-code-pro-for-powerline \
+                  gitter \
                   goland \
                   google-chrome \
                   google-cloud-sdk \

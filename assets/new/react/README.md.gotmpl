@@ -1,0 +1,171 @@
+# {{ .projectName }}
+
+[![Dependency Status](https://david-dm.org/{{ .githubUser }}/{{ .projectName }}/status.svg)](https://david-dm.org/{{ .githubUser }}/{{ .projectName }})
+[![DevDependency Status](https://david-dm.org/{{ .githubUser }}/{{ .projectName }}/dev-status.svg)](https://david-dm.org/{{ .githubUser }}/{{ .projectName }}?type=dev)
+{{- if .ci }}
+[![CircleCI](https://circleci.com/gh/{{ .githubUser }}/{{ .projectName }}/tree/master.svg?style=shield)](https://circleci.com/gh/{{ .githubUser }}/{{ .projectName }}/tree/master)
+[![Appveyor](https://ci.appveyor.com/api/projects/status/github/{{ .githubUser }}/{{ .projectName }}?svg=true&branch=master)](https://ci.appveyor.com/api/projects/status/github/{{ .githubUser }}/{{ .projectName }}?svg=true&branch=master)
+{{- end }}
+{{- if .coverallToken }}
+[![Coverage Status](https://coveralls.io/repos/github/{{ .githubUser }}/{{ .projectName }}/badge.svg?branch=master)](https://coveralls.io/github/{{ .githubUser }}/{{ .projectName }}?branch=master)
+{{- end }}
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+[![Tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+{{- if eq .license "MIT" }}
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+{{- else if eq .license "GPL" }}
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+{{- else if eq .license "Apache" }}
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+{{- end }}
+[![Template from jarvis](https://img.shields.io/badge/Hi-Jarvis-ff69b4.svg)](https://github.com/Armour/Jarvis)
+
+{{ .projectDescription }}
+
+## Stack
+
+* [x] [yarn](https://github.com/yarnpkg/yarn) - dependency manager
+* [x] [express](http://expressjs.com/) - node.js web framework for backend
+* [x] [materialize](http://materializecss.com/) - a modern responsive front-end framework based on Material Design
+* [x] [sass](https://github.com/sass/sass) - CSS pre-processors
+* [x] [postcss](https://github.com/postcss/postcss) - CSS post-processor
+* [x] [webpack 4](https://github.com/webpack/webpack) - module bundler
+* [x] [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) - offers a dev middleware for webpack, which arguments a live bundle to a directory
+* [x] [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) - add hot reloading into an existing server without [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+* [x] followed [ES6 standard](https://github.com/lukehoban/es6features)
+* [x] [babel](https://babeljs.io/) - a JavaScript compiler that compile ES6 to ES5
+* [x] [react](https://facebook.github.io/react/) - a JavaScript library for building user interfaces
+* [x] [react-hot-loader 4](https://github.com/gaearon/react-hot-loader) - hot module reload!
+* [x] [react-router 4](https://github.com/ReactTraining/react-router) - declarative routing for React
+* [x] [react-redux](https://github.com/reactjs/react-redux) - the official react bindings for [redux 4](https://github.com/reactjs/redux) (a predictable state container for js apps)
+* [x] [connected-react-router](https://github.com/supasate/connected-react-router) - a redux binding for react-router 4, the replacement for [react-router-redux v5](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
+* [x] [immutable.js](https://github.com/facebook/immutable-js/) - persistent Immutable data structures for react redux state management
+{{- if .typescript }}
+* [x] [Typescript](https://github.com/Microsoft/TypeScript) - a typed superset of javascript that scales
+* [x] [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) - high quality TypeScript type definitions
+{{- end }}
+* [x] [editorconfig](http://editorconfig.org/) - maintain consistent coding styles between different editors and IDEs
+* [x] [eslint](http://eslint.org/) - lint javascript files (.js, .jsx)
+{{- if .typescript }}
+* [x] [tslint](https://palantir.github.io/tslint/) - lint typescript files (.ts, .tsx)
+{{- end }}
+* [x] [stylelint](https://stylelint.io/) - lint style files (.css, .scss)
+* [x] [commitlint](https://github.com/marionebl/commitlint) - lint git commit messages
+{{- if .postgres }}
+* [x] [postgresql](https://www.postgresql.org/) - advanced open source database
+{{- end }}
+* [x] [prismjs](https://github.com/PrismJS/prism) - code syntax highlight
+* [x] [jest](https://facebook.github.io/jest/) - painless javascript testing
+{{- if .coverallToken }}
+* [x] [coveralls](https://coveralls.io/) - test coverage
+{{- end }}
+* [x] [husky](https://github.com/typicode/husky) - git hooks
+* [x] [circle-ci 2](https://circleci.com/) - continuous integration tool for testing and deployment
+* [x] [heroku](https://www.heroku.com/) - a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+{{- if .docker }}
+* [x] [docker](https://github.com/docker/docker) - the open-source application container engine
+{{- end }}
+
+## How to run the example code
+
+### Prerequisite
+
+* `node`
+* `yarn` (recommended) or `npm`
+{{- if .docker }}
+* `docker` (recommended) with `docker-compose`
+
+### Quickest way
+
+The easiest way to run the example project is to use `docker-compose`:
+
+```bash
+docker-compose up --build
+```
+
+that's it :)
+
+You can also follow instructions below if you want to customize it.
+{{- end }}
+
+### Install project dependencies
+
+Go to project root directory:
+
+```bash
+yarn install
+```
+
+If you find permission problem when trying to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
+{{- if and .postgres .redis .docker}}
+
+### Setup database and session store
+
+You can either
+
+* run `postgresql` and `redis` using docker images:
+
+```bash
+docker-compose up -d postgres redis
+```
+
+or
+
+* maintain it by yourself, if so, make sure you set the right config in `backend/config.json`.
+{{- end }}
+
+## Build & Run
+
+On development (with react-hot-reload and redux-devtools):
+
+```bash
+yarn dev
+```
+
+On production (with uglify-js and other optimazitions):
+
+```bash
+yarn prod
+```
+
+## Profile assets bundle
+
+Thanks to [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), we can analyze and then optimize our assets bundle through [DLL Plugin](https://webpack.js.org/plugins/dll-plugin/).
+
+```bash
+yarn profile
+```
+
+## Run test
+
+```bash
+yarn test
+```
+{{- if .coverallToken }}
+
+## Code coverage
+
+```bash
+yarn coveralls
+```
+{{- end }}
+
+## Deployment
+
+```bash
+yarn deploy
+```
+
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/.github/CONTRIBUTING.md)
+
+## License
+
+{{ if eq .license "MIT" -}}
+[MIT License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
+{{- else if eq .license "GPL" -}}
+[GPL License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
+{{- else if eq .license "Apache" -}}
+[Apache License](https://github.com/{{ .githubUser }}/{{ .projectName }}/blob/master/LICENSE)
+{{- end }}

@@ -5,14 +5,15 @@ import (
 	"github.com/armour/jarvis/cmd/dot"
 	"github.com/armour/jarvis/cmd/new"
 	"github.com/armour/jarvis/cmd/say"
+	"github.com/armour/jarvis/internal/pkg/config"
 	"github.com/armour/jarvis/internal/pkg/utils"
 	"github.com/spf13/cobra"
 )
 
 var rootCmd = &cobra.Command{
 	Use:   "jarvis",
-	Short: "My personal assistant",
-	Long:  "Jarvis is my personal assistant who can help me do some tedious work",
+	Short: "Jarvis - Rersonal assistant",
+	Long:  "Jarvis is a personal assistant who can help you do some tedious work",
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
@@ -23,6 +24,7 @@ func Execute() {
 }
 
 func init() {
+	config.LoadConfig()
 	rootCmd.AddCommand(dot.DotCmd)
 	rootCmd.AddCommand(new.NewCmd)
 	rootCmd.AddCommand(say.SayCmd)

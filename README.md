@@ -15,13 +15,25 @@ Personal assistant 🤖 [still under development]
 go get github.com/armour/jarvis
 ```
 
+## Config file
+
+Create a `jarvis.json` file under home directory like below, `jarvis` will use these informations later in the project generator.
+
+```json
+{
+    "author": "Chong Guo",
+    "email": "armourcy@gmail.com",
+    "githubUser": "Armour"
+}
+```
+
 ## Todos
 
 * [x] Go project generator
 * [x] Python project generator
 * [x] Unity project generator
 * [x] Misc project generator
-* [x] Webpack project generator
+* [x] React project generator
 * [x] Dot file backup/sync
 * [x] Play around with [Hitokoto](https://hitokoto.cn/) api
 * [ ] Google Home integration
@@ -35,7 +47,7 @@ go get github.com/armour/jarvis
 
 * [Sync global dot files](https://asciinema.org/a/185548)
 
-* [Start new project using webpack template](https://asciinema.org/a/185553)
+* [Start new project using react template](https://asciinema.org/a/185553)
 
 * [Start new project using go template](https://asciinema.org/a/185551)
 
@@ -53,11 +65,13 @@ go get github.com/armour/jarvis
   * [armour/upass-sfu](https://github.com/Armour/upass-sfu) - Python script to auto renew monthly UPass for SFU student
   * [armour/gmail-bot](https://github.com/Armour/gmail-bot) - Gmail bot for CMPT412 TA
   * [armour/sentence-classifier-based-on-word-similarity](https://github.com/Armour/sentence-classifier-based-on-word-similarity) - A very simple sentence classifier based on word similarity with NLTK and rake_nltk package
-* Webpack:
+* React:
   * [armour/express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
-* Misc:
+* Unity:
   * [armour/Multiplayer-FPS](https://github.com/Armour/Multiplayer-FPS) - A multiplayer first person shooter game based on Unity Game Engine
+* Misc:
   * [armour/Magic-Tower-Qt](https://github.com/Armour/Magic-Tower-Qt) - A C++(with Qt) version Magic-Tower game
+  * [armour/commitlint-config-armour)](https://github.com/Armour/commitlint-config-armour) - My shareable config for commitlint
 
 ## Contributing
 

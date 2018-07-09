@@ -11,20 +11,12 @@ import (
 
 var questions = []*survey.Question{
 	{
-		Name: "username",
-		Prompt: &survey.Input{
-			Message: "Username?",
-			Default: "armour",
-			Help:    "The name of current user.",
-		},
-	},
-	{
 		Name: "platform",
 		Prompt: &survey.Select{
 			Message: "Choose a platform:",
 			Options: []string{"Mac", "Linux", "Windows"},
 			Default: "Mac",
-			Help:    "The platform for download dot files.",
+			Help:    "The platform of your machine.",
 		},
 	},
 }
@@ -36,30 +28,27 @@ var SyncCmd = &cobra.Command{
 	Long:  "Download all global dot files to local machine.",
 	Run: func(cmd *cobra.Command, args []string) {
 		answers := struct {
-			Username string
 			Platform string
 		}{}
-		err := survey.Ask(questions, &answers)
+		if err := survey.Ask(questions, &answers); err != nil {
+			utils.ExitOnError(err)
+		}
+		usr, err := user.Current()
 		if err != nil {
 			utils.ExitOnError(err)
 		}
-
-		templatePath := "../../../assets/dot/dotfiles"
+		templates := []string{"dot/dotfiles"}
 		requireMap := map[string]interface{}{
 			"mac":     answers.Platform == "Mac",
 			"linux":   answers.Platform == "Linux",
 			"windows": answers.Platform == "Windows",
 		}
 		replaceMap := map[string]interface{}{
-			"username": answers.Username,
+			"username": usr.Name,
 			"mac":      answers.Platform == "Mac",
 			"linux":    answers.Platform == "Linux",
 			"windows":  answers.Platform == "Windows",
 		}
-		usr, err := user.Current()
-		if err != nil {
-			utils.ExitOnError(err)
-		}
-		utils.GenerateFile(templatePath, usr.HomeDir, requireMap, replaceMap)
+		utils.GenerateFile(templates, usr.HomeDir, requireMap, replaceMap)
 	},
 }

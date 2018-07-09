@@ -5,8 +5,8 @@ import (
 	"github.com/armour/jarvis/cmd/new/go"
 	"github.com/armour/jarvis/cmd/new/misc"
 	"github.com/armour/jarvis/cmd/new/python"
+	"github.com/armour/jarvis/cmd/new/react"
 	"github.com/armour/jarvis/cmd/new/unity"
-	"github.com/armour/jarvis/cmd/new/webpack"
 	"github.com/spf13/cobra"
 )
 
@@ -22,5 +22,5 @@ func init() {
 	NewCmd.AddCommand(misc.MiscCmd)
 	NewCmd.AddCommand(python.PythonCmd)
 	NewCmd.AddCommand(unity.UnityCmd)
-	NewCmd.AddCommand(webpack.WebpackCmd)
+	NewCmd.AddCommand(react.ReactCmd)
 }
