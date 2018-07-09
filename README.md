@@ -31,10 +31,10 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 
 * [x] Go project generator
 * [x] Python project generator
+* [x] React project generator
+* [x] Npm project generator
 * [x] Unity project generator
 * [x] Misc project generator
-* [x] Npm project generator
-* [x] React project generator
 * [x] Dot file backup/sync
 * [x] Play around with [Hitokoto](https://hitokoto.cn/) api
 * [ ] Google Home integration
@@ -42,17 +42,19 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 * [ ] Wallpaper management
 * [ ] And more...
 
-## Usage
+## Usage examples
 
-* [Say something（#￣▽￣#）](https://asciinema.org/a/184121)
+* Say something（#￣▽￣#)
+  * [![asciicast](https://asciinema.org/a/184121.png)](https://asciinema.org/a/184121)
 
-* [Sync global dot files](https://asciinema.org/a/185548)
+* Sync global dot files
+  * [![asciicast](https://asciinema.org/a/185548.png)](https://asciinema.org/a/185548)
 
-* [Start new project using react template](https://asciinema.org/a/185553)
+* Start new project using react template
+  * [![asciicast](https://asciinema.org/a/190782.png)](https://asciinema.org/a/190782)
 
-* [Start new project using go template](https://asciinema.org/a/185551)
-
-* [Start new project using misc template](https://asciinema.org/a/185559)
+* Start new project using go template
+  * [![asciicast](https://asciinema.org/a/190781.png)](https://asciinema.org/a/190781)
 
 ## Projects used Jarvis
 
@@ -68,10 +70,10 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
   * [armour/sentence-classifier-based-on-word-similarity](https://github.com/Armour/sentence-classifier-based-on-word-similarity) - A very simple sentence classifier based on word similarity with NLTK and rake_nltk package
 * React:
   * [armour/express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
-* Unity:
-  * [armour/Multiplayer-FPS](https://github.com/Armour/Multiplayer-FPS) - A multiplayer first person shooter game based on Unity Game Engine
 * Npm:
   * [armour/commitlint-config-armour)](https://github.com/Armour/commitlint-config-armour) - My shareable config for commitlint
+* Unity:
+  * [armour/Multiplayer-FPS](https://github.com/Armour/Multiplayer-FPS) - A multiplayer first person shooter game based on Unity Game Engine
 * Misc:
   * [armour/Magic-Tower-Qt](https://github.com/Armour/Magic-Tower-Qt) - A C++(with Qt) version Magic-Tower game
 
