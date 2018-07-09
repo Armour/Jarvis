@@ -45,16 +45,16 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 ## Usage examples
 
 * Say something（#￣▽￣#)
-  * [![asciicast](https://asciinema.org/a/184121.png)](https://asciinema.org/a/184121)
+  * <a href="https://asciinema.org/a/184121"><img src="https://asciinema.org/a/184121.png" alt="https://asciinema.org/a/184121.png" width="75%"></a>
 
 * Sync global dot files
-  * [![asciicast](https://asciinema.org/a/185548.png)](https://asciinema.org/a/185548)
+  * <a href="https://asciinema.org/a/185548"><img src="https://asciinema.org/a/185548.png" alt="https://asciinema.org/a/185548.png" width="75%"></a>
 
 * Start new project using react template
-  * [![asciicast](https://asciinema.org/a/190782.png)](https://asciinema.org/a/190782)
+  * <a href="https://asciinema.org/a/190782"><img src="https://asciinema.org/a/190782.png" alt="https://asciinema.org/a/190782.png" width="75%"></a>
 
 * Start new project using go template
-  * [![asciicast](https://asciinema.org/a/190781.png)](https://asciinema.org/a/190781)
+  * <a href="https://asciinema.org/a/190781"><img src="https://asciinema.org/a/190781.png" alt="https://asciinema.org/a/190781.png" width="75%"></a>
 
 ## Projects used Jarvis
 
