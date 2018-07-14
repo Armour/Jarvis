@@ -75,7 +75,7 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 * React:
   * [armour/express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
 * Npm:
-  * [armour/commitlint-config-armour)](https://github.com/Armour/commitlint-config-armour) - My shareable config for commitlint
+  * [armour/commitlint-config-armour](https://github.com/Armour/commitlint-config-armour) - My shareable config for commitlint
 * Unity:
   * [armour/Multiplayer-FPS](https://github.com/Armour/Multiplayer-FPS) - A multiplayer first person shooter game based on Unity Game Engine
 * Misc:
