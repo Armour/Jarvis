@@ -25,7 +25,8 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 {
     "author": "Chong Guo",
     "email": "armourcy@gmail.com",
-    "githubUser": "Armour"
+    "githubUser": "Armour",
+    "dockerUser": "cguo"
 }
 ```
 

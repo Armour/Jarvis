@@ -16,6 +16,7 @@
 *.dylib binary
 *.exe   binary
 *.so    binary
+*.test  binary
 
 # DOCUMENTATION
 *.md         text

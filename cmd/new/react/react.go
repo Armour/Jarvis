@@ -114,8 +114,9 @@ var ReactCmd = &cobra.Command{
 		replaceMap := map[string]interface{}{
 			"author":             config.GetConfigByField("author"),
 			"ci":                 answers.CI,
-			"coverage":           answers.CoverallToken,
+			"coverallToken":      answers.CoverallToken,
 			"docker":             answers.Docker,
+			"dockerUser":         config.GetConfigByField("dockerUser"),
 			"email":              config.GetConfigByField("email"),
 			"githubUser":         config.GetConfigByField("githubUser"),
 			"license":            answers.License,

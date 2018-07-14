@@ -15,6 +15,7 @@ func LoadConfig() {
 	jarvisConfig.SetDefault("author", "Author")
 	jarvisConfig.SetDefault("email", "your.email@email.com")
 	jarvisConfig.SetDefault("githubUser", "GithubUser")
+	jarvisConfig.SetDefault("dockerUser", "DockerUser")
 
 	jarvisConfig.SetConfigName("jarvis") // name of config file (without extension)
 	jarvisConfig.AddConfigPath("$HOME")  // path to look for the config file in

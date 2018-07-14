@@ -1,7 +1,6 @@
 # {{ .projectName }}
 
 [![Dependency Status](https://david-dm.org/{{ .githubUser }}/{{ .projectName }}/status.svg)](https://david-dm.org/{{ .githubUser }}/{{ .projectName }})
-[![DevDependency Status](https://david-dm.org/{{ .githubUser }}/{{ .projectName }}/dev-status.svg)](https://david-dm.org/{{ .githubUser }}/{{ .projectName }}?type=dev)
 {{- if .ci }}
 [![CircleCI](https://circleci.com/gh/{{ .githubUser }}/{{ .projectName }}/tree/master.svg?style=shield)](https://circleci.com/gh/{{ .githubUser }}/{{ .projectName }}/tree/master)
 [![Appveyor](https://ci.appveyor.com/api/projects/status/github/{{ .githubUser }}/{{ .projectName }}?svg=true&branch=master)](https://ci.appveyor.com/api/projects/status/github/{{ .githubUser }}/{{ .projectName }}?svg=true&branch=master)
@@ -114,7 +113,7 @@ or
 * maintain it by yourself, if so, make sure you set the right config in `backend/config.json`.
 {{- end }}
 
-## Build & Run
+### Build & Run
 
 On development (with react-hot-reload and redux-devtools):
 
@@ -146,7 +145,7 @@ yarn test
 ## Code coverage
 
 ```bash
-yarn coveralls
+yarn coverage
 ```
 {{- end }}
 

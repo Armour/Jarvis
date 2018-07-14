@@ -9,17 +9,25 @@
 # SOURCE CODE
 *.bat      text eol=crlf
 *.css      text
-*.ejs      text
-*.html     text
 *.js       text
 *.jsx      text
+*.ejs      text
+*.html     text
 *.less     text
 *.sass     text
 *.scss     text
 *.sh       text eol=lf
 *.sql      text
+{{- if .typescript }}
 *.ts       text
 *.tsx      text
+{{- end }}
+{{- if .docker }}
+
+# DOCKER
+*.dockerignore    text
+Dockerfile        text
+{{- end }}
 
 # COMPILED FILES
 *.dll   binary
