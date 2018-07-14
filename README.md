@@ -38,6 +38,7 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 * [x] Npm project generator
 * [x] Unity project generator
 * [x] Misc project generator
+* [ ] Vue project generator
 * [x] Dot file backup/sync
 * [x] Play around with [Hitokoto](https://hitokoto.cn/) api
 * [ ] Google Home integration
