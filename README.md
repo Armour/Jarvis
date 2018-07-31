@@ -11,6 +11,27 @@
 
 Personal assistant 🤖 [still under development]
 
+## Projects used Jarvis
+
+* Go:
+  * [armour/jarvis](https://github.com/Armour/jarvis) - Personal assistant
+  * [armour/go-node-builtins](https://github.com/Armour/go-node-builtins) - List of node.js builtin modules in Golang
+  * [armour/go-validate-npm-package-name](https://github.com/Armour/go-validate-npm-package-name) - Check if the given string is an acceptable npm package name in Golang
+* Python:
+  * [armour/Automatic-Image-Colorization](https://github.com/Armour/Automatic-Image-Colorization) - Automatic Image Colorization using TensorFlow based on Residual Encoder Network
+  * [armour/pixiv-spider](https://github.com/Armour/pixiv-spider) - A simple Pixiv Crawler
+  * [armour/upass-sfu](https://github.com/Armour/upass-sfu) - Python script to auto renew monthly UPass for SFU student
+  * [armour/gmail-bot](https://github.com/Armour/gmail-bot) - Gmail bot for CMPT412 TA
+  * [armour/sentence-classifier-based-on-word-similarity](https://github.com/Armour/sentence-classifier-based-on-word-similarity) - A very simple sentence classifier based on word similarity with NLTK and rake_nltk package
+* React:
+  * [armour/express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
+* Npm:
+  * [armour/commitlint-config-armour](https://github.com/Armour/commitlint-config-armour) - My shareable config for commitlint
+* Unity:
+  * [armour/Multiplayer-FPS](https://github.com/Armour/Multiplayer-FPS) - A multiplayer first person shooter game based on Unity Game Engine
+* Misc:
+  * [armour/Magic-Tower-Qt](https://github.com/Armour/Magic-Tower-Qt) - A C++(with Qt) version Magic-Tower game
+
 ## Install
 
 ```bash
@@ -59,27 +80,6 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 
 * Start new project using go template
   * <a href="https://asciinema.org/a/190781"><img src="https://asciinema.org/a/190781.png" alt="https://asciinema.org/a/190781.png" width="75%"></a>
-
-## Projects used Jarvis
-
-* Go:
-  * [armour/jarvis](https://github.com/Armour/jarvis) - Personal assistant
-  * [armour/go-node-builtins](https://github.com/Armour/go-node-builtins) - List of node.js builtin modules in Golang
-  * [armour/go-validate-npm-package-name](https://github.com/Armour/go-validate-npm-package-name) - Check if the given string is an acceptable npm package name in Golang
-* Python:
-  * [armour/Automatic-Image-Colorization](https://github.com/Armour/Automatic-Image-Colorization) - Automatic Image Colorization using TensorFlow based on Residual Encoder Network
-  * [armour/pixiv-spider](https://github.com/Armour/pixiv-spider) - A simple Pixiv Crawler
-  * [armour/upass-sfu](https://github.com/Armour/upass-sfu) - Python script to auto renew monthly UPass for SFU student
-  * [armour/gmail-bot](https://github.com/Armour/gmail-bot) - Gmail bot for CMPT412 TA
-  * [armour/sentence-classifier-based-on-word-similarity](https://github.com/Armour/sentence-classifier-based-on-word-similarity) - A very simple sentence classifier based on word similarity with NLTK and rake_nltk package
-* React:
-  * [armour/express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
-* Npm:
-  * [armour/commitlint-config-armour](https://github.com/Armour/commitlint-config-armour) - My shareable config for commitlint
-* Unity:
-  * [armour/Multiplayer-FPS](https://github.com/Armour/Multiplayer-FPS) - A multiplayer first person shooter game based on Unity Game Engine
-* Misc:
-  * [armour/Magic-Tower-Qt](https://github.com/Armour/Magic-Tower-Qt) - A C++(with Qt) version Magic-Tower game
 
 ## Contributing
 
