@@ -4,16 +4,19 @@ PLEASE HELP US PROCESS GITHUB ISSUES FASTER BY PROVIDING THE FOLLOWING INFORMATI
 ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION.
 -->
 
-# I'm submitting a
+<!-- Please search GitHub for a similar issue or PR before submitting -->
 
-<!-- Check one of the following options with "x" -->
+# What you are submitting ?
 
-[ ] Bug report  <!-- Please search GitHub for a similar issue or PR before submitting -->
-[ ] Feature request
-[ ] Performance issue
-[ ] Regression (a behavior that used to work and stopped working in a new release)
-[ ] Documentation issue or request
-[ ] Other... Please describe:
+<!-- 
+E.g.
+    bug report,
+    feature request,
+    performance issue,
+    regression (a behavior that used to work and stopped working in a new release),
+    documentation issue or request,
+    or others... (Please describe)
+-->
 
 ## Current behavior
 
