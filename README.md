@@ -31,6 +31,7 @@ Personal assistant 🤖 [still under development]
   * [armour/Multiplayer-FPS](https://github.com/Armour/Multiplayer-FPS) - A multiplayer first person shooter game based on Unity Game Engine
 * Misc:
   * [armour/Magic-Tower-Qt](https://github.com/Armour/Magic-Tower-Qt) - A C++(with Qt) version Magic-Tower game
+  * [armour/vscode-typescript-react-redux-snippets](https://github.com/Armour/vscode-typescript-react-redux-snippets) - Typescript, React and Redux snippets for VSCode (followed ES6 standard)
 
 ## Install
 
