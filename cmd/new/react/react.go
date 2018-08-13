@@ -36,13 +36,6 @@ var questions = []*survey.Question{
 		Validate: survey.Required,
 	},
 	{
-		Name: "typescript",
-		Prompt: &survey.Confirm{
-			Message: "Use typescript?",
-			Default: true,
-		},
-	},
-	{
 		Name: "database",
 		Prompt: &survey.Select{
 			Message: "Choose a database:",
@@ -97,19 +90,17 @@ var ReactCmd = &cobra.Command{
 			ProjectDescription string
 			ProjectName        string
 			Redis              bool
-			Typescript         bool
 		}{}
 		if err := survey.Ask(questions, &answers); err != nil {
 			utils.ExitOnError(err)
 		}
 		templates := []string{"new/react", "new/github", "new/license"}
 		requireMap := map[string]interface{}{
-			"ci":         answers.CI,
-			"coverage":   answers.CoverallToken,
-			"docker":     answers.Docker,
-			"postgres":   answers.Database == "Postgres",
-			"redis":      answers.Redis,
-			"typescript": answers.Typescript,
+			"ci":       answers.CI,
+			"coverage": answers.CoverallToken,
+			"docker":   answers.Docker,
+			"postgres": answers.Database == "Postgres",
+			"redis":    answers.Redis,
 		}
 		replaceMap := map[string]interface{}{
 			"author":             config.GetConfigByField("author"),
@@ -124,7 +115,6 @@ var ReactCmd = &cobra.Command{
 			"projectDescription": answers.ProjectDescription,
 			"projectName":        answers.ProjectName,
 			"redis":              answers.Redis,
-			"typescript":         answers.Typescript,
 		}
 		utils.GenerateFile(templates, "", requireMap, replaceMap)
 	},

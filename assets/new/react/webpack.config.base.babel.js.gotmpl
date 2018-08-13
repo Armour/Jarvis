@@ -21,16 +21,12 @@ export default {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
   context: path.resolve(__dirname),
 
-  // Minimal log level
-  stats: 'minimal',
-
   // Get mode from NODE_ENV
   mode: process.env.NODE_ENV,
 
   // Determine how the different types of modules within a project will be treated
   module: {
     rules: [
-      {{- if .typescript }}
       // Use awesome-typescript-loader and babel-loader for ts(x) files
       {
         test: /\.tsx?$/,
@@ -49,25 +45,26 @@ export default {
           // Alternatively, we can use ts-loader
           // { loader: 'ts-loader' },
         ],
-        exclude: /node_modules/,
       },
-      {{- else }}
-      // Use babel-loader for js(x) files
-      {
-        test: /\.jsx?$/,
-        use: [
-          { loader: 'babel-loader' },
-        ],
-        exclude: /node_modules/,
-      },
-      {{- end }}
       // Use a list of loaders to load css files
       {
         test: /\.css$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: false, importLoaders: 1 } }, // TODO: enable sourceMap without FOUC
-          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv, cssnano] } },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: !devMode,
+              importLoaders: 1,
+            },
+          }, // TODO: enable sourceMap in devMode without FOUC
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: () => [postcssImport, postcssPresetEnv, cssnano],
+            },
+          },
         ],
       },
       // Use a list of loaders to load scss files
@@ -75,8 +72,22 @@ export default {
         test: /\.scss$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: false, importLoaders: 2 } }, // TODO: enable sourceMap without FOUC
-          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv, cssnano] } },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: !devMode,
+              importLoaders: 2,
+              modules: true,
+              localIdentName: '[local]--[hash:base64:8]',
+            },
+          }, // TODO: enable sourceMap in devMode without FOUC
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: () => [postcssImport, postcssPresetEnv, cssnano],
+            },
+          },
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
@@ -85,7 +96,7 @@ export default {
         test: /\.(png|jpe?g|gif|svg|webp|tiff)(\?.*)?$/,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
-          { loader: 'image-webpack-loader', options: { disable: true } },
+          { loader: 'image-webpack-loader', options: { disable: devMode } },
         ],
       },
       // Use url-loader to load font related files
@@ -123,14 +134,14 @@ export default {
     // Generate html file to dist folder
     new HtmlWebpackPlugin({
       title: '{{ .projectName }}',
-      favicon: path.resolve(__dirname, 'frontend/src/images/favicon.ico'),
-      template: path.resolve(__dirname, 'frontend/template/index.ejs'),
+      favicon: path.resolve(__dirname, 'frontend/public/favicon.ico'),
+      template: path.resolve(__dirname, 'frontend/public/index.ejs'),
     }),
     // Add Progressive Web Application manifest
     new WebpackPwaManifest({
-      short_name: '{{ .projectName }}',
       name: '{{ .projectName }}',
-      description: '{{ .projectDescription }}',
+      short_name: '{{ .projectName }}',
+      start_url: '.',
       background_color: '#2196f3',
       theme_color: '#2196f3',
       orientation: 'portrait',
@@ -138,24 +149,20 @@ export default {
       ios: true,
       icons: [
         {
-          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
-          sizes: [192, 512], // Generate general icons
-        },
-        {
-          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
+          src: path.resolve(__dirname, 'frontend/public/logo.png'),
           sizes: [120, 152, 167, 180],
           destination: path.join('icons', 'ios'),
           ios: true, // Generate apple touch icons
         },
         {
-          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
+          src: path.resolve(__dirname, 'frontend/public/logo.png'),
           sizes: 1024,
           destination: path.join('icons', 'ios'),
           ios: 'startup', // Generate apple touch startup image
         },
         {
-          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
-          sizes: [144, 192, 512],
+          src: path.resolve(__dirname, 'frontend/public/logo.png'),
+          sizes: [36, 48, 72, 96, 144, 192, 512],
           destination: path.join('icons', 'android'), // Generate android icons
         },
       ],
@@ -176,13 +183,12 @@ export default {
     ],
     // Automatically resolve certain extensions (Ex. import 'folder/name(.ext)')
     extensions: [
-      {{- if .typescript }}
       '.ts',
       '.tsx',
-      {{- end }}
       '.js',
       '.jsx',
       '.json',
+      '.css',
       '.scss',
     ],
   },

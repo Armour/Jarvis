@@ -63,8 +63,6 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 * [x] Dot file backup/sync
 * [x] Play around with [Hitokoto](https://hitokoto.cn/) api
 * [ ] Google Home integration
-* [ ] Music management
-* [ ] Wallpaper management
 * [ ] And more...
 
 ## Usage examples

@@ -6,7 +6,7 @@ ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION.
 
 <!-- Please search GitHub for a similar issue or PR before submitting -->
 
-# What you are submitting ?
+# I'm submitting a
 
 <!-- 
 E.g.
@@ -15,7 +15,7 @@ E.g.
     performance issue,
     regression (a behavior that used to work and stopped working in a new release),
     documentation issue or request,
-    or others... (Please describe)
+    or others... (please describe)
 -->
 
 ## Current behavior
@@ -32,7 +32,7 @@ E.g.
 For bug reports please provide the *STEPS TO REPRODUCE* and if possible a *MINIMAL DEMO* of the problem via github repo or similar tools.
 -->
 
-## What is the motivation / use case for changing the behavior?
+## What is the motivation / use case for changing the behavior
 
 <!-- Describe the motivation or the concrete use case. -->
 

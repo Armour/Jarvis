@@ -1,0 +1,61 @@
+@import 'sass/variables';
+
+.fetch-note-layout {
+  border: 1px lightgray solid;
+  margin: 50px auto;
+  width: 850px;
+  padding: 20px 30px 40px;
+}
+
+@media only screen and (max-width: $medium-screen) {
+  .fetch-note-layout {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: $small-screen) {
+  .fetch-note-layout {
+    max-width: 85%;
+  }
+}
+
+.fetch-note-title {
+  display: block;
+  font-weight: 100;
+  font-size: 4.5em;
+  color: $secondary-color;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: $medium-screen) {
+  .fetch-note-title {
+    font-weight: 100;
+    font-size: 4em;
+  }
+}
+
+@media only screen and (max-width: $small-screen) {
+  .fetch-note-title {
+    font-weight: 100;
+    font-size: 3em;
+  }
+}
+
+.fetch-note-collection {
+  margin: 25px 0 0 0;
+}
+
+.fetch-note-error-panel {
+  margin: 20px 0 0 0;
+}
+
+.fetch-note-filter-btn {
+  width: 30%;
+}
+
+@media only screen and (max-width: $small-screen) {
+  .fetch-note-filter-btn {
+    width: 80%;
+    max-width: 300px;
+  }
+}

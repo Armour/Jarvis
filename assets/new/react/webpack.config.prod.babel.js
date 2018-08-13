@@ -1,25 +1,12 @@
 import path from 'path';
 import merge from 'webpack-merge';
 
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 import BaseWebpackConfig from './webpack.config.base.babel';
 
 export default merge(BaseWebpackConfig, {
-  // override default optimization, add OptimizeCSSAssetsPlugin support, consider remove this after webpack v5
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true,
-      }),
-      new OptimizeCSSAssetsPlugin({}),
-    ],
-  },
-
   // The point or points to enter the application.
   entry: {
     app: './frontend/src/index',
@@ -38,6 +25,18 @@ export default merge(BaseWebpackConfig, {
 
   // A list of used webpack plugins
   plugins: [
+    // Copy static files to build dir
+    new CopyWebpackPlugin([
+      {
+        from: 'frontend/public/*',
+        to: '[name].[ext]',
+        ignore: [
+          'favicon.ico',
+          'index.ejs',
+          'logo.png',
+        ],
+      },
+    ]),
     // It's always better if OfflinePlugin is the last plugin added
     new OfflinePlugin(),
   ],
@@ -45,9 +44,4 @@ export default merge(BaseWebpackConfig, {
   // Source map mode
   // https://webpack.js.org/configuration/devtool
   devtool: 'source-map',
-
-  // Turn off performance hints (assets size limit)
-  performance: {
-    hints: false,
-  },
 });

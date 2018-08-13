@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "frontend/src",
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2015",
+    ],
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true, // FIXME: workaround for immutable.js
+    "keyofStringsOnly": true, // FIXME: workaround for immutable.js
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.spec.tsx"
+  ]
+}

@@ -12,8 +12,8 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "jarvis",
-	Short: "Jarvis - Rersonal assistant",
-	Long:  "Jarvis is a personal assistant who can help you do some tedious work",
+	Short: "Jarvis - your personal assistant",
+	Long:  "Jarvis - your personal assistant",
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

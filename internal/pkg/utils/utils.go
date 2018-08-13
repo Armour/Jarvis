@@ -59,24 +59,46 @@ func GenerateFile(templates []string, outputPath string, requireMap map[string]i
 		boldGreen := color.New(color.FgGreen, color.Bold).SprintFunc()
 		fmt.Printf("\n%s%s%s\n", bold("Using template "), boldGreen(t), bold(", generated file:"))
 		for _, f := range templatesBox.List() {
-			// Check requirement.
+			// Check prerequisites.
 			var invalid bool
 			outputFile := f
 			requireMatches := requireRE.FindAllStringSubmatch(outputFile, -1)
 			for _, m := range requireMatches {
-				var reverseMatch bool
+				var negativeFlag bool
 				pattern, word := m[0], m[1]
 				if strings.HasPrefix(word, "~") {
 					word = word[1:]
-					reverseMatch = true
+					negativeFlag = true
 				}
-				if r, ok := requireMap[word]; ok {
-					invalid = invalid || r == reverseMatch || (r != "") == reverseMatch
+				if requiredValue, ok := requireMap[word]; ok {
+					switch v := requiredValue.(type) {
+					case int:
+						invalid = v == 0
+						if negativeFlag {
+							invalid = v != 0
+						}
+					case string:
+						invalid = v == ""
+						if negativeFlag {
+							invalid = v != ""
+						}
+					case bool:
+						invalid = !v
+						if negativeFlag {
+							invalid = v
+						}
+					default:
+						fmt.Printf("I don't know about type %T!\n", v)
+						invalid = true
+					}
+				} else {
+					fmt.Printf("Missing requirement \"%s\" in file %s\n", word, f)
+					invalid = true
 				}
-				outputFile = strings.Replace(outputFile, pattern, "", -1)
 				if invalid {
 					break
 				}
+				outputFile = strings.Replace(outputFile, pattern, "", -1)
 			}
 			if invalid {
 				continue

@@ -16,11 +16,27 @@
     "import/no-duplicates": "error",
     "import/no-unresolved": "error",
     "import/no-webpack-loader-syntax": "error",
-    "import/prefer-default-export": "off",
-    "indent": ["error", 2],
     "linebreak-style": "off",
-    "max-len": "off",
-    "no-console": "warn",
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }]
+    "indent": [
+      "error",
+      2
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "info"
+        ]
+      }
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ]
   }
 }

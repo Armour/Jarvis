@@ -1,0 +1,19 @@
+@import 'sass/variables';
+
+.example-card-panel {
+  border: 1px lightgray solid;
+  margin: 30px auto;
+  width: 850px;
+}
+
+@media only screen and (max-width: $medium-screen) {
+  .example-card-panel {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: $small-screen) {
+  .example-card-panel {
+    max-width: 85%;
+  }
+}
