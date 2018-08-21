@@ -23,6 +23,7 @@ Personal assistant 🤖 [still under development]
   * [armour/upass-sfu](https://github.com/Armour/upass-sfu) - Python script to auto renew monthly UPass for SFU student
   * [armour/gmail-bot](https://github.com/Armour/gmail-bot) - Gmail bot for CMPT412 TA
   * [armour/sentence-classifier-based-on-word-similarity](https://github.com/Armour/sentence-classifier-based-on-word-similarity) - A very simple sentence classifier based on word similarity with NLTK and rake_nltk package
+  * [armour/pytorch-nn-practice](https://github.com/Armour/pytorch-nn-practice) - My pytorch neural network practice repo
 * React:
   * [armour/express-webpack-react-redux-typescript-boilerplate](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate) - A full-stack boilerplate that using express with webpack, react and typescirpt
 * Npm:
@@ -32,6 +33,7 @@ Personal assistant 🤖 [still under development]
 * Misc:
   * [armour/Magic-Tower-Qt](https://github.com/Armour/Magic-Tower-Qt) - A C++(with Qt) version Magic-Tower game
   * [armour/vscode-typescript-react-redux-snippets](https://github.com/Armour/vscode-typescript-react-redux-snippets) - Typescript, React and Redux snippets for VSCode (followed ES6 standard)
+  * [armour/atom-typescript-react-redux-snippets](https://github.com/Armour/atom-typescript-react-redux-snippets) - Typescript, React and Redux snippets for Atom (followed ES6 standard)
 
 ## Install
 
@@ -56,11 +58,11 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 
 * [x] Go project generator
 * [x] Python project generator
-* [x] React project generator
 * [x] Npm project generator
 * [x] Unity project generator
+* [x] React & Typescript project generator
+* [ ] Vue & Typescript project generator
 * [x] Misc project generator
-* [ ] Vue project generator
 * [x] Dot file backup/sync
 * [x] Play around with [Hitokoto](https://hitokoto.cn/) api
 * [ ] Google Home integration
