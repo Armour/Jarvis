@@ -1,6 +1,6 @@
 # Gopkg.toml example
 #
-# Refer to https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md
+# Refer to https://golang.github.io/dep/docs/Gopkg.toml.html
 # for detailed Gopkg.toml documentation.
 #
 # required = ["github.com/user/thing/cmd/thing"]
@@ -27,19 +27,27 @@
 
 [[constraint]]
   name = "github.com/briandowns/spinner"
-  version = "1.0.0"
+  version = "1.6.0"
+
+[[constraint]]
+  name = "github.com/fatih/color"
+  version = "1.7.0"
 
 [[constraint]]
   name = "github.com/gobuffalo/packr"
-  version = "1.11.0"
+  version = "2.2.0"
 
 [[constraint]]
   name = "github.com/spf13/cobra"
-  version = "0.0.3"
+  version = "0.0.4"
+
+[[constraint]]
+  name = "github.com/spf13/viper"
+  version = "1.4.0"
 
 [[constraint]]
   name = "gopkg.in/AlecAivazis/survey.v1"
-  version = "1.5.3"
+  version = "1.8.4"
 
 [prune]
   go-tests = true

@@ -6,7 +6,7 @@ set autoread
 set smartindent
 set showmatch
 
-" set maplearder key
+" set leader key
 let mapleader = ","
 let maplocalleader = ","
 

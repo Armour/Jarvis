@@ -2,10 +2,13 @@
 package goproject
 
 import (
+	"fmt"
+
 	"github.com/armour/jarvis/internal/pkg/config"
 	"github.com/armour/jarvis/internal/pkg/utils"
+	"github.com/fatih/color"
 	"github.com/spf13/cobra"
-	"gopkg.in/AlecAivazis/survey.v1"
+	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
 var questions = []*survey.Question{
@@ -61,6 +64,13 @@ var GoCmd = &cobra.Command{
 			"projectDescription": answers.ProjectDescription,
 			"projectName":        answers.ProjectName,
 		}
-		utils.GenerateFile(templates, "", requireMap, replaceMap)
+		utils.GenerateFile(templates, answers.ProjectName, requireMap, replaceMap)
+
+		bold := color.New(color.Bold).SprintFunc()
+		boldCyan := color.New(color.FgCyan, color.Bold).SprintFunc()
+
+		fmt.Println()
+		fmt.Printf("%s%s%s\n", bold("This project uses "), boldCyan("Dep (Dependency management for Go)"), bold(", see more detail here: https://golang.github.io/dep/"))
+		fmt.Printf("%s%s%s\n", bold("This project follows "), boldCyan("Standard Go Project Layout"), bold(", see more detail here: https://github.com/golang-standards/project-layout/"))
 	},
 }

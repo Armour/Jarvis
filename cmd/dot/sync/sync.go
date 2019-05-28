@@ -6,7 +6,7 @@ import (
 
 	"github.com/armour/jarvis/internal/pkg/utils"
 	"github.com/spf13/cobra"
-	"gopkg.in/AlecAivazis/survey.v1"
+	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
 var questions = []*survey.Question{
@@ -44,7 +44,7 @@ var SyncCmd = &cobra.Command{
 			"windows": answers.Platform == "Windows",
 		}
 		replaceMap := map[string]interface{}{
-			"username": usr.Name,
+			"username": usr.Username,
 			"mac":      answers.Platform == "Mac",
 			"linux":    answers.Platform == "Linux",
 			"windows":  answers.Platform == "Windows",

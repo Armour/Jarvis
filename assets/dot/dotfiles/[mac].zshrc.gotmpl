@@ -51,21 +51,12 @@ ZSH_THEME="agnoster"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  autojump django docker encode64 fast-syntax-highlighting git git-extras history npm osx pip pod python redis-cli sudo urltools yarn zsh-autosuggestions
-)
-
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PGDATA="/usr/local/var/postgres"
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
+
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 export PATH="/usr/local/anaconda3/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
@@ -74,9 +65,6 @@ export PATH="$PATH:$GOROOT/bin"
 export PATH="$PATH:$(yarn global bin)"
 export PATH="$PATH:/usr/local/share/dotnet"
 export PATH="$PATH:$HOME/.rvm/bin"
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-source <(npx --shell-auto-fallback zsh)
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -94,6 +82,28 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/chongguo/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH
+
+# Support autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# Remove prefix username in terminal
+[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="{{ .username }}"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  autojump django docker encode64 fast-syntax-highlighting git git-extras history npm osx pip pod python redis-cli sudo urltools yarn zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -108,7 +118,7 @@ alias vimconf='vim ~/.vimrc'
 alias zshconf='vim ~/.zshrc'
 alias szsh='source ~/.zshrc'
 alias htop='sudo htop'
-alias brews='brew update && brew upgrade -y && brew cu -ay && brew cleanup && brew cask cleanup'
+alias brews='brew update && brew upgrade && brew cu -y && brew cleanup'
 alias cat='ccat'
 alias diff='colordiff'
 alias vi='vim'
@@ -133,11 +143,6 @@ alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Support autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-# Remove prefix username in terminal
-[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="{{ .username }}"
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+source <(npx --shell-auto-fallback zsh)
