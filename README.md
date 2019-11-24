@@ -76,10 +76,10 @@ Create a `jarvis.json` file under home directory like below, `jarvis` will use t
 * Sync global dot files
   * <a href="https://asciinema.org/a/185548"><img src="https://asciinema.org/a/185548.png" alt="https://asciinema.org/a/185548.png" width="75%"></a>
 
-* Start new project using react template
+* Start a new project using react template
   * <a href="https://asciinema.org/a/190782"><img src="https://asciinema.org/a/190782.png" alt="https://asciinema.org/a/190782.png" width="75%"></a>
 
-* Start new project using go template
+* Start a new project using go template
   * <a href="https://asciinema.org/a/190781"><img src="https://asciinema.org/a/190781.png" alt="https://asciinema.org/a/190781.png" width="75%"></a>
 
 ## Contributing
